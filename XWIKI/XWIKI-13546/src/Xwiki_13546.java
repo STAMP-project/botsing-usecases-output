@@ -26,59 +26,29 @@ import org.xwiki.properties.ConverterManager;
 import org.xwiki.wiki.descriptor.WikiDescriptorManager;
 import org.xwiki.observation.event.Event;
 
+
+// Stack trace is:
+// java.lang.IllegalArgumentException: An Entity Reference name cannot be null or empty
+// 	at org.xwiki.model.reference.EntityReference.setName(EntityReference.java:186)
+// 	at org.xwiki.model.reference.EntityReference.<init>(EntityReference.java:171)
+// 	at org.xwiki.model.reference.EntityReference.<init>(EntityReference.java:142)
+// 	at org.xwiki.model.reference.WikiReference.<init>(WikiReference.java:61)
+// 	at org.xwiki.configuration.internal.AbstractDocumentConfigurationSource.getCurrentWikiReference(AbstractDocumentConfigurationSource.java:185)
+// 	at org.xwiki.mail.internal.configuration.SendMailConfigClassDocumentConfigurationSource.getDocumentReference(SendMailConfigClassDocumentConfigurationSource.java:68)
+// 	at org.xwiki.configuration.internal.AbstractDocumentConfigurationSource.getCacheKeyPrefix(AbstractDocumentConfigurationSource.java:122)
+// 	at org.xwiki.configuration.internal.AbstractDocumentConfigurationSource.getPropertyValue(AbstractDocumentConfigurationSource.java:306)
+// 	at org.xwiki.configuration.internal.AbstractDocumentConfigurationSource.getProperty(AbstractDocumentConfigurationSource.java:301)
+// 	at org.xwiki.mail.internal.configuration.DefaultMailSenderConfiguration.getSendWaitTime(DefaultMailSenderConfiguration.java:313)
+
 public class Xwiki_13546 {
     @Test
     public void frame10() throws Throwable {
-        Logger logger0 = (Logger)SQLCustomQuery.log;
-        NOPLogger nOPLogger0 = NOPLogger.NOP_LOGGER;
         DefaultMailSenderConfiguration defaultMailSenderConfiguration0 = new DefaultMailSenderConfiguration();
         SendMailConfigClassDocumentConfigurationSource sendMailConfigClassDocumentConfigurationSource0 = new SendMailConfigClassDocumentConfigurationSource();
-        CacheManager cacheManager0 = mock(CacheManager.class, new ViolatedAssumptionAnswer());
-        Injector.inject(sendMailConfigClassDocumentConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "cacheManager", (Object) cacheManager0);
-        ConverterManager converterManager0 = mock(ConverterManager.class, new ViolatedAssumptionAnswer());
-        Injector.inject(sendMailConfigClassDocumentConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "converter", (Object) converterManager0);
-        Injector.inject(sendMailConfigClassDocumentConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "logger", (Object) nOPLogger0);
-        DefaultObservationManager defaultObservationManager0 = new DefaultObservationManager();
-        ComponentManager componentManager0 = mock(ComponentManager.class, new ViolatedAssumptionAnswer());
-        Injector.inject(defaultObservationManager0, (Class<?>) DefaultObservationManager.class, "componentManager", (Object) componentManager0);
-        Injector.inject(defaultObservationManager0, (Class<?>) DefaultObservationManager.class, "logger", (Object) nOPLogger0);
-        Injector.validateBean(defaultObservationManager0, (Class<?>) DefaultObservationManager.class);
-        Injector.inject(sendMailConfigClassDocumentConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "observation", (Object) defaultObservationManager0);
-        EntityReferenceSerializer<Object> entityReferenceSerializer0 = (EntityReferenceSerializer<Object>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
-        Injector.inject(sendMailConfigClassDocumentConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "referenceSerializer", (Object) entityReferenceSerializer0);
         WikiDescriptorManager wikiDescriptorManager0 = mock(WikiDescriptorManager.class, new ViolatedAssumptionAnswer());
         doReturn((String) null).when(wikiDescriptorManager0).getCurrentWikiId();
         Injector.inject(sendMailConfigClassDocumentConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "wikiManager", (Object) wikiDescriptorManager0);
-        Provider<LocalDate> provider0 = (Provider<LocalDate>) mock(Provider.class, new ViolatedAssumptionAnswer());
-        Injector.inject(sendMailConfigClassDocumentConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "xcontextProvider", (Object) provider0);
-        Injector.validateBean(sendMailConfigClassDocumentConfigurationSource0, (Class<?>) SendMailConfigClassDocumentConfigurationSource.class);
-        Injector.inject(defaultMailSenderConfiguration0, (Class<?>) DefaultMailSenderConfiguration.class, "documentsSource", (Object) sendMailConfigClassDocumentConfigurationSource0);
-        Injector.inject(defaultMailSenderConfiguration0, (Class<?>) DefaultMailSenderConfiguration.class, "logger", (Object) logger0);
         Injector.inject(defaultMailSenderConfiguration0, (Class<?>) DefaultMailSenderConfiguration.class, "mailConfigSource", (Object) sendMailConfigClassDocumentConfigurationSource0);
-        Injector.inject(defaultMailSenderConfiguration0, (Class<?>) DefaultMailSenderConfiguration.class, "xwikiPropertiesSource", (Object) sendMailConfigClassDocumentConfigurationSource0);
-        Injector.validateBean(defaultMailSenderConfiguration0, (Class<?>) DefaultMailSenderConfiguration.class);
         defaultMailSenderConfiguration0.getSendWaitTime();
-    }
-    @Test
-    public void frame9() throws Throwable{
-        SendMailConfigClassDocumentConfigurationSource sendMailConfigClassDocumentConfigurationSource0 = new SendMailConfigClassDocumentConfigurationSource();
-        CacheManager cacheManager0 = mock(CacheManager.class, new ViolatedAssumptionAnswer());
-        Injector.inject(sendMailConfigClassDocumentConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "cacheManager", (Object) cacheManager0);
-        ConverterManager converterManager0 = mock(ConverterManager.class, new ViolatedAssumptionAnswer());
-        Injector.inject(sendMailConfigClassDocumentConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "converter", (Object) converterManager0);
-        Logger logger0 = mock(Logger.class, new ViolatedAssumptionAnswer());
-        Injector.inject(sendMailConfigClassDocumentConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "logger", (Object) logger0);
-        ObservationManager observationManager0 = mock(ObservationManager.class, new ViolatedAssumptionAnswer());
-        Injector.inject(sendMailConfigClassDocumentConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "observation", (Object) observationManager0);
-        EntityReferenceSerializer<Event> entityReferenceSerializer0 = (EntityReferenceSerializer<Event>) mock(EntityReferenceSerializer.class, new ViolatedAssumptionAnswer());
-        Injector.inject(sendMailConfigClassDocumentConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "referenceSerializer", (Object) entityReferenceSerializer0);
-        WikiDescriptorManager wikiDescriptorManager0 = mock(WikiDescriptorManager.class, new ViolatedAssumptionAnswer());
-        doReturn((String) null).when(wikiDescriptorManager0).getCurrentWikiId();
-        Injector.inject(sendMailConfigClassDocumentConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "wikiManager", (Object) wikiDescriptorManager0);
-        Provider<XWikiContext> provider0 = (Provider<XWikiContext>) mock(Provider.class, new ViolatedAssumptionAnswer());
-        Injector.inject(sendMailConfigClassDocumentConfigurationSource0, (Class<?>) AbstractDocumentConfigurationSource.class, "xcontextProvider", (Object) provider0);
-        Injector.validateBean(sendMailConfigClassDocumentConfigurationSource0, (Class<?>) SendMailConfigClassDocumentConfigurationSource.class);
-        sendMailConfigClassDocumentConfigurationSource0.getProperty("N{by#dc;#7 )");
-
     }
 }
