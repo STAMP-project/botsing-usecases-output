@@ -1,0 +1,8 @@
+java.lang.NullPointerException: null
+	at no.tellu.cloud.mediator.Port.send(Port.java:18)
+	at no.tellu.cloud.filterstore.ObservationHandler.handleData(ObservationHandler.java:164)
+	at no.tellu.cloud.filterstore.ObservationHandler.handleData(ObservationHandler.java:74)
+	at no.tellu.cloud.filterstore.FilterStoreService.onMessage(FilterStoreService.java:171)
+	at no.tellu.cloud.mediator.impl.CoreMediator.handleMessage(CoreMediator.java:432)
+	at no.tellu.cloud.mediator.java.JavaMediator$JavaListener.onMessage(JavaMediator.java:62)
+	at no.tellu.cloud.mediator.java.MessageBroker$MessageListener.run(MessageBroker.java:40)
