@@ -4,7 +4,14 @@ System under test: FilterStore micro-service - filterstore-3.2-SNAPSHOT-jar-with
 Log: filterstore_test_01.txt
 Frame level: 3
 
-Result: Stops with exception after a short time.
+We tried to run this five times, and got two types of result:
+
+* 3 times it stopped with an exception after a short time. "ERROR o.e.t.execution.TestCaseExecutor - ExecutionException (this is likely a serious error in the framework)". Root cause "org.evosuite.runtime.TooManyResourcesException: Loop has been executed more times than the allowed 10000". A full trace below.
+
+* 2 times it completed in 50 seconds. No exception, but no test was found. From log:
+Current value of stopping condition class org.evosuite.ga.stoppingconditions.MaxGenerationStoppingCondition: 60
+The target crash is not covered! The best solution has 4.5 fitness value.
+
 
 15:22:41.041 [main] ERROR o.e.t.execution.TestCaseExecutor - ExecutionException (this is likely a serious error in the framework)
 java.util.concurrent.ExecutionException: org.evosuite.testcase.execution.EvosuiteError: java.lang.ExceptionInInitializerError
