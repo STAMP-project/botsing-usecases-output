@@ -1,0 +1,32 @@
+no.tellu.findit.services.ServiceException: no.tellu.findit.cmd.CommandException: org.hibernate.exception.JDBCConnectionException: Cannot open connection
+	at no.tellu.cloud.ruleengine.droolsfive.DroolsFiveDataService.getChangelogSinceRead(DroolsFiveDataService.java:174)
+	at no.tellu.cloud.ruleengine.droolsfive.LogicController.run(LogicController.java:141)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: no.tellu.findit.cmd.CommandException: org.hibernate.exception.JDBCConnectionException: Cannot open connection
+	at no.tellu.findit.cmd.hibernate.CommandHandlerImpl.executeCommand(CommandHandlerImpl.java:73)
+	at no.tellu.cloud.ruleengine.droolsfive.DroolsFiveDataService.getChangelogSinceRead(DroolsFiveDataService.java:171)
+	... 2 common frames omitted
+Caused by: org.hibernate.exception.JDBCConnectionException: Cannot open connection
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:97)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:66)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:52)
+	at org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:449)
+	at org.hibernate.jdbc.ConnectionManager.getConnection(ConnectionManager.java:167)
+	at org.hibernate.jdbc.JDBCContext.connection(JDBCContext.java:142)
+	at org.hibernate.transaction.JDBCTransaction.begin(JDBCTransaction.java:85)
+	at org.hibernate.impl.SessionImpl.beginTransaction(SessionImpl.java:1353)
+	at sun.reflect.GeneratedMethodAccessor373.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.hibernate.context.ThreadLocalSessionContext$TransactionProtectionWrapper.invoke(ThreadLocalSessionContext.java:342)
+	at com.sun.proxy.$Proxy30.beginTransaction(Unknown Source)
+	at no.tellu.findit.cfg.HibernateUtil.beginTransaction(HibernateUtil.java:168)
+	at no.tellu.findit.cmd.hibernate.CommandHandlerImpl.executeCommand(CommandHandlerImpl.java:54)
+	... 3 common frames omitted
+Caused by: org.postgresql.util.PSQLException: This connection has been closed.
+	at org.postgresql.jdbc.PgConnection.checkClosed(PgConnection.java:766)
+	at org.postgresql.jdbc.PgConnection.getAutoCommit(PgConnection.java:727)
+	at org.hibernate.connection.DriverManagerConnectionProvider.getConnection(DriverManagerConnectionProvider.java:127)
+	at org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:446)
+	... 14 common frames omitted
+ 

@@ -1,0 +1,15 @@
+no.tellu.cloud.mediator.exceptions.MessageNotHandledException: Exception processing message
+	at no.tellu.cloud.subscription.SubscriptionServiceComponent.onMessage(SubscriptionServiceComponent.java:189)
+	at no.tellu.cloud.mediator.impl.CoreMediator.handleMessage(CoreMediator.java:432)
+	at no.tellu.cloud.mediator.impl.CoreMediator.handleMessage(CoreMediator.java:397)
+	at no.tellu.cloud.mediator.rabbitmq.RabbitMQMediator$MyListener.handleDelivery(RabbitMQMediator.java:245)
+	at com.rabbitmq.client.impl.ConsumerDispatcher$5.run(ConsumerDispatcher.java:144)
+	at com.rabbitmq.client.impl.ConsumerWorkService$WorkPoolRunnable.run(ConsumerWorkService.java:99)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.Exception: Failed to look up subscriptions for customer
+	at no.tellu.cloud.subscription.utility.SubscriptionManager.processMessage(SubscriptionManager.java:445)
+	at no.tellu.cloud.subscription.SubscriptionServiceComponent.onMessage(SubscriptionServiceComponent.java:183)
+	... 8 common frames omitted
+	

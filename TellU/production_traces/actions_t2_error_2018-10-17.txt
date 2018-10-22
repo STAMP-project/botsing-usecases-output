@@ -1,0 +1,13 @@
+CustomerId: 10362116 - Action failed for action event: class no.tellu.cloud.protocol.actions.SendHttpRequestMsg Message: {\"method\":\"POST\",\"url\":\"https://webhook.site/b346df51-2d84-4ba9-af90-f4d3a9556e60\",\"headers\":{},\"timeout\":10,\"customerId\":10362116,\"actionName\":\"no.tellu.cloud.protocol.actions.SendHttpRequestMsg\"} Exception: {}
+no.tellu.findit.action.services.ActionServiceException: Customer: 10362116 - Exception during execution of  HTTP method: POST URL:https://webhook.site/b346df51-2d84-4ba9-af90-f4d3a9556e60
+	at no.tellu.findit.action.workers.HttpAction.doAction(HttpAction.java:121)
+	at no.tellu.findit.action.ActionPoolHandler$ActionHandler.run(ActionPoolHandler.java:172)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.IllegalArgumentException: Source string may not be null
+	at org.apache.http.util.Args.notNull(Args.java:54)
+	at org.apache.http.entity.StringEntity.(StringEntity.java:65)
+	at org.apache.http.entity.StringEntity.(StringEntity.java:146)
+	at no.tellu.findit.action.workers.HttpAction.doAction(HttpAction.java:62)
+	... 4 common frames omitted

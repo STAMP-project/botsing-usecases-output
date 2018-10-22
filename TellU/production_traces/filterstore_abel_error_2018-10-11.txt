@@ -1,0 +1,39 @@
+org.hibernate.exception.ConstraintViolationException: Could not execute JDBC batch update
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:94)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:66)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:275)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:266)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:168)
+	at org.hibernate.event.def.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:321)
+	at org.hibernate.event.def.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:50)
+	at org.hibernate.impl.SessionImpl.flush(SessionImpl.java:1027)
+	at org.hibernate.impl.SessionImpl.managedFlush(SessionImpl.java:365)
+	at org.hibernate.transaction.JDBCTransaction.commit(JDBCTransaction.java:137)
+	at no.tellu.findit.cfg.HibernateUtil.commit(HibernateUtil.java:200)
+	at no.tellu.findit.cmd.hibernate.CommandHandlerImpl.executeCommand(CommandHandlerImpl.java:63)
+	at no.tellu.cloud.filterstore.ObservationHandler.handleData(ObservationHandler.java:108)
+	at no.tellu.cloud.filterstore.ObservationHandler.handleData(ObservationHandler.java:74)
+	at no.tellu.cloud.filterstore.FilterStoreService.onMessage(FilterStoreService.java:171)
+	at no.tellu.cloud.mediator.impl.CoreMediator.handleMessage(CoreMediator.java:432)
+	at no.tellu.cloud.mediator.impl.CoreMediator.handleMessage(CoreMediator.java:397)
+	at no.tellu.cloud.mediator.rabbitmq.RabbitMQMediator$MyListener.handleDelivery(RabbitMQMediator.java:245)
+	at com.rabbitmq.client.impl.ConsumerDispatcher$5.run(ConsumerDispatcher.java:144)
+	at com.rabbitmq.client.impl.ConsumerWorkService$WorkPoolRunnable.run(ConsumerWorkService.java:99)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.BatchUpdateException: Batch entry 0 update POSITION_TABLE set accuracy=0.0, address='Kroneburgpassage 50 6831 ER Arnhem', altitude=NULL, course=NULL, event='observation position GTWFR', floor=0, index=125603, indoorLocation_id=NULL, insideZonesFullString='[{size|5.28938889E8}{circumference|1.5649543708016604}{name|Politieregio Gelderland Midden...}{id|66717051}{customer|62989239}][{size|1.7976931348623157E308}{circumference|14.285849882899546}{name|Opvolging}{id|76203346}{customer|53731387}]', insideZonesString='{66717051}{76203346}', latitude=51.959067452338, locationTimeStamp='2018-10-11 16:14:02+00', longitude=5.8964566064842, MD5=?, observationId=-980432353, permanentPropertiesString='{tag.rssi.calc-2|?}{tag.rssi.calc-1|?}{messageNumber|0B5C}{device.sendTime|2018-10-11T16:14:02.000}{protocol.version|070106}{uuid|868487001014562}{tag.type-1|beacon}{tag.rssi-2|-53.0}{tag.type-2|beacon}{tag.rssi-1|-60.0}{edge|smarttracker}{tag.id-1|34:4d:ea:88:10:11}{event.code|GTWFR}{tag.rssi.pri-1|?}{tag.id-2|c8:0e:14:e9:fd:22}{tag.rssi.pri-2|?}', positionOutOfOrder='FALSE', propertiesString='config.IMEI==868487001014562#addressSource==fixedPositionFilter#config.MSISDN==00467190004407858#config.apn==internet.cxn', receptionTimeStamp='2018-10-11 16:15:07.466000+00', sensorDevice_position_provider_id=54371105, sourceString=NULL, speed=0.0, tag_position_provider_id=NULL, textual='', timeStamp='2018-10-11 16:14:02+00', valid='TRUE', version=NULL, x=0.0, y=0.0, z=0.0 where id=55375353 was aborted: ERROR: duplicate key value violates unique constraint "position_table_md5_key"
+ Detail: Key (md5)=(\xa56a6d578d7680de275017a8ed12c728) already exists.  Call getNextException to see other errors in the batch.
+	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:148)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2191)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:472)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:791)
+	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1563)
+	at org.hibernate.jdbc.BatchingBatcher.doExecuteBatch(BatchingBatcher.java:70)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:268)
+	... 20 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "position_table_md5_key"
+  Detail: Key (md5)=(\xa56a6d578d7680de275017a8ed12c728) already exists.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2477)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2190)
+	... 25 common frames omitted

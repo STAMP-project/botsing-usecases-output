@@ -1,0 +1,20 @@
+no.tellu.cloud.mediator.exceptions.MessageNotSentException: Failed to create MediatorConnection to actions
+	at no.tellu.cloud.mediator.client.MediatorClientImpl.send(MediatorClientImpl.java:138)
+	at no.tellu.cloud.mediator.ServiceComponent.send(ServiceComponent.java:258)
+	at no.tellu.cloud.mediator.Port.send(Port.java:18)
+	at no.tellu.cloud.ruleengine.droolsfive.RuleEngineController.fireEngine(RuleEngineController.java:367)
+	at no.tellu.cloud.ruleengine.droolsfive.RuleEngineController.handleObservation(RuleEngineController.java:575)
+	at no.tellu.cloud.ruleengine.droolsfive.LogicController.handleObservation(LogicController.java:306)
+	at no.tellu.cloud.ruleengine.droolsfive.DroolsFiveService.onMessage(DroolsFiveService.java:78)
+	at no.tellu.cloud.mediator.impl.CoreMediator.handleMessage(CoreMediator.java:432)
+	at no.tellu.cloud.mediator.impl.CoreMediator.handleMessage(CoreMediator.java:397)
+	at no.tellu.cloud.mediator.rabbitmq.RabbitMQMediator$MyListener.handleDelivery(RabbitMQMediator.java:245)
+	at com.rabbitmq.client.impl.ConsumerDispatcher$5.run(ConsumerDispatcher.java:144)
+	at com.rabbitmq.client.impl.ConsumerWorkService$WorkPoolRunnable.run(ConsumerWorkService.java:99)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: no.tellu.cloud.mediator.exceptions.ServiceNotFoundException: No instances found for service actions
+	at no.tellu.cloud.mediator.client.MediatorClientImpl.createMediatorConnection(MediatorClientImpl.java:115)
+	at no.tellu.cloud.mediator.client.MediatorClientImpl.send(MediatorClientImpl.java:136)
+	... 14 common frames omitted

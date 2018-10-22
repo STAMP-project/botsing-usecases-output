@@ -1,0 +1,9 @@
+java.io.FileNotFoundException: Resource not found in class path: secrets/STMobilePush.p12
+	at no.tellu.lib.util.ResourceFinder.getResourceAsStream(ResourceFinder.java:37)
+	at no.tellu.lib.util.ResourceFinder.getStream(ResourceFinder.java:173)
+	at no.tellu.lib.util.ResourceFinder.getFileAsStream(ResourceFinder.java:156)
+	at no.tellu.cloud.push.services.ApplePushService.(ApplePushService.java:43)
+	at no.tellu.cloud.push.MobilePushService.init(MobilePushService.java:41)
+	at no.tellu.cloud.push.MobilePushService.init(MobilePushService.java:49)
+	at no.tellu.cloud.mediator.ServiceComponent.initFromConfig(ServiceComponent.java:123)
+	at no.tellu.cloud.push.MobilePushServer.main(MobilePushServer.java:12)

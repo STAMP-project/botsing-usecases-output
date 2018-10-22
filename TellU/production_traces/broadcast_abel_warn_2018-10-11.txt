@@ -1,0 +1,8 @@
+java.lang.IllegalStateException: Not Partial Text in state 0
+	at org.eclipse.jetty.websocket.common.WebSocketRemoteEndpoint.unlockMsg(WebSocketRemoteEndpoint.java:213)
+	at org.eclipse.jetty.websocket.common.WebSocketRemoteEndpoint.sendPartialString(WebSocketRemoteEndpoint.java:358)
+	at org.eclipse.jetty.websocket.jsr356.JsrBasicRemote.sendText(JsrBasicRemote.java:119)
+	at no.tellu.cloud.broadcast.WebsocketHandler.tick(WebsocketHandler.java:73)
+	at no.tellu.cloud.broadcast.Timer.run(Timer.java:29)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
