@@ -1,0 +1,10 @@
+no.tellu.findit.action.services.ActionServiceException: Illegal message received: {"message":"MagnusTest has timed out.","alarmText":"","level":-5,"alarmType":"timeout","customerId":5582028,"actionName":"no.tellu.cloud.protocol.actions.CreateAlarmMsg"}
+	at no.tellu.findit.action.workers.RaiseAlarmAction.doAction(RaiseAlarmAction.java:99)
+	at no.tellu.findit.action.ActionPoolHandler$ActionHandler.run(ActionPoolHandler.java:172)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: no.tellu.cloud.mediatorprotocol.ValidationException: Asset, Device and User are all NULL
+	at no.tellu.cloud.protocol.actions.CreateAlarmMsg.validate(CreateAlarmMsg.java:60)
+	at no.tellu.findit.action.workers.RaiseAlarmAction.doAction(RaiseAlarmAction.java:57)
+	... 4 common frames omitted
