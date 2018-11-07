@@ -2,9 +2,9 @@
 
 ### Results
 
-Tests are generated for frame level 1,2 and 3.
-Generated tests are emty for frame level 4 and 5.
-For frame level from 6 to 9, no tests are generated.
+Tests are generated for frame level 1,2 and 3.  
+Generated tests are empty for frame level 4 and 5.  
+For frame level from 6 to 9, no tests are generated.  
 
 ### Tested log
 
