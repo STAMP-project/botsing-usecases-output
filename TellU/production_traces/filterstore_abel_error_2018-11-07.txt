@@ -1,0 +1,65 @@
+no.tellu.findit.services.ServiceException: no.tellu.findit.cmd.CommandException: org.hibernate.exception.GenericJDBCException: could not execute update query
+	at no.tellu.cloud.filterstore.ObservationHandler.handleData(ObservationHandler.java:111)
+	at no.tellu.cloud.filterstore.ObservationHandler.handleData(ObservationHandler.java:74)
+	at no.tellu.cloud.filterstore.FilterStoreService.onMessage(FilterStoreService.java:171)
+	at no.tellu.cloud.mediator.impl.CoreMediator.handleMessage(CoreMediator.java:432)
+	at no.tellu.cloud.mediator.impl.CoreMediator.handleMessage(CoreMediator.java:397)
+	at no.tellu.cloud.mediator.rabbitmq.RabbitMQMediator$MyListener.handleDelivery(RabbitMQMediator.java:245)
+	at com.rabbitmq.client.impl.ConsumerDispatcher$5.run(ConsumerDispatcher.java:144)
+	at com.rabbitmq.client.impl.ConsumerWorkService$WorkPoolRunnable.run(ConsumerWorkService.java:99)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: no.tellu.findit.cmd.CommandException: org.hibernate.exception.GenericJDBCException: could not execute update query
+	at no.tellu.findit.cmd.hibernate.CommandHandlerImpl.executeCommand(CommandHandlerImpl.java:73)
+	at no.tellu.cloud.filterstore.ObservationHandler.handleData(ObservationHandler.java:108)
+	... 10 common frames omitted
+Caused by: org.hibernate.exception.GenericJDBCException: could not execute update query
+	at org.hibernate.exception.SQLStateConverter.handledNonSpecificException(SQLStateConverter.java:126)
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:114)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:66)
+	at org.hibernate.hql.ast.exec.BasicExecutor.execute(BasicExecutor.java:107)
+	at org.hibernate.hql.ast.QueryTranslatorImpl.executeUpdate(QueryTranslatorImpl.java:419)
+	at org.hibernate.engine.query.HQLQueryPlan.performExecuteUpdate(HQLQueryPlan.java:283)
+	at org.hibernate.impl.SessionImpl.executeUpdate(SessionImpl.java:1168)
+	at org.hibernate.impl.QueryImpl.executeUpdate(QueryImpl.java:117)
+	at no.tellu.cloud.filterstore.cmd.UpdateSensorPositionCmd.updateSensorDeviceState(UpdateSensorPositionCmd.java:747)
+	at no.tellu.cloud.filterstore.cmd.UpdateSensorPositionCmd.handleDevice(UpdateSensorPositionCmd.java:292)
+	at no.tellu.cloud.filterstore.cmd.UpdateSensorPositionCmd.execute(UpdateSensorPositionCmd.java:94)
+	at no.tellu.findit.cmd.hibernate.CommandHandlerImpl.executeCommand(CommandHandlerImpl.java:59)
+	... 11 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: current transaction is aborted, commands ignored until end of transaction block
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2477)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2190)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:300)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:428)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:354)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:169)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:136)
+	at org.hibernate.hql.ast.exec.BasicExecutor.execute(BasicExecutor.java:98)
+	... 19 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: deadlock detected
+  Detail: Process 20715 waits for ShareLock on transaction 58781940; blocked by process 20289.
+  Process 20289 waits for ShareLock on transaction 58781939; blocked by process 20715.
+  Hint: See server log for query details.
+  Where: while updating tuple (17928,8) in relation "position_provider"
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2477)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2190)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:472)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:791)
+	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1563)
+	at org.hibernate.jdbc.BatchingBatcher.doExecuteBatch(BatchingBatcher.java:70)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:268)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:266)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:168)
+	at org.hibernate.event.def.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:321)
+	at org.hibernate.event.def.DefaultAutoFlushEventListener.onAutoFlush(DefaultAutoFlushEventListener.java:64)
+	at org.hibernate.impl.SessionImpl.autoFlushIfRequired(SessionImpl.java:996)
+	at org.hibernate.impl.SessionImpl.list(SessionImpl.java:1141)
+	at org.hibernate.impl.QueryImpl.list(QueryImpl.java:102)
+	at no.tellu.cloud.devicefilter.BeaconResolveFilter.findByBeaconsByCustomerIdAndCode(BeaconResolveFilter.java:404)
+	at no.tellu.cloud.devicefilter.BeaconResolveFilter.apply(BeaconResolveFilter.java:197)
+	at no.tellu.cloud.devicefilter.DeviceFilter.apply(DeviceFilter.java:375)
+	at no.tellu.cloud.devicefilter.DeviceFilter.applyAllFilters(DeviceFilter.java:192)
+	at no.tellu.cloud.filterstore.cmd.UpdateSensorPositionCmd.handleDevice(UpdateSensorPositionCmd.java:143)
+	... 13 common frames omitted
