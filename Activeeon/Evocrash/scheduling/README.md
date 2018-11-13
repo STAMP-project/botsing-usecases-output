@@ -22,4 +22,4 @@
 
 ### Conclusion
 
-Evocrash has better result when logs contain custom exceptions. By using custom exception we managed to generate relevant tests and empty tests. Using logs that throw java exception doesn't seems to be relevant with Evocrash as it crashes during the generation process.
+Evocrash has better results when logs contain custom exceptions. By using custom exceptions, we managed to generate relevant tests and empty tests. Using logs that throw existing exceptions don't seem to be relevant with Evocrash as it crashes during the generation process.
