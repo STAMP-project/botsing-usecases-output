@@ -1,5 +1,20 @@
 ### Evocrash version 1.0.0-SNAPSHOT
 
+### Results
+
+Evocrash was unable to generate a test from the following log.
+
+### Tested log
+
+```
+com.fasterxml.jackson.core.JsonParseException
+        at org.ow2.proactive.scheduler.task.executors.InProcessTaskExecutor.execute(InProcessTaskExecutor.java:225)
+        at org.ow2.proactive.scheduler.task.executors.InProcessTaskExecutor.execute(InProcessTaskExecutor.java:158)
+        at org.ow2.proactive.scheduler.task.executors.forked.env.ExecuteForkedTaskInsideNewJvm.fromForkedJVM(ExecuteForkedTaskInsideNewJvm.java:115)
+        at org.ow2.proactive.scheduler.task.executors.forked.env.ExecuteForkedTaskInsideNewJvm.main(ExecuteForkedTaskInsideNewJvm.java:105)
+
+```
+
 ### Configuration
 
 ```
@@ -25,15 +40,3 @@ exception.type=com.fasterxml.jackson.core.JsonParseException
 ```
 
 The frame.level configuration was tested with several values.
-
-### Tested log
-
-```
-com.fasterxml.jackson.core.JsonParseException
-        at org.ow2.proactive.scheduler.task.executors.InProcessTaskExecutor.execute(InProcessTaskExecutor.java:225)
-        at org.ow2.proactive.scheduler.task.executors.InProcessTaskExecutor.execute(InProcessTaskExecutor.java:158)
-        at org.ow2.proactive.scheduler.task.executors.forked.env.ExecuteForkedTaskInsideNewJvm.fromForkedJVM(ExecuteForkedTaskInsideNewJvm.java:115)
-        at org.ow2.proactive.scheduler.task.executors.forked.env.ExecuteForkedTaskInsideNewJvm.main(ExecuteForkedTaskInsideNewJvm.java:105)
-
-```
-
