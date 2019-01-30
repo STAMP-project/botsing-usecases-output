@@ -1,0 +1,6 @@
+* XWiki stack trace for which I'm not able to have Botsing generate a test for
+* To use in Botsing: download the XWiki Standard 11.0 WAR to get all XWiki JARs
+* Tried with:
+** java -jar botsing-reproduction-1.0.3.jar -project_cp applications/xwiki110 -crash_log crashes/XWIKI-16080.log -target_frame 3 -Dsearch_budget=600
+** java -jar botsing-reproduction-1.0.3.jar -project_cp applications/xwiki110 -crash_log crashes/XWIKI-16080.log -target_frame 2 -Dsearch_budget=600
+** java -jar botsing-reproduction-1.0.3.jar -project_cp applications/xwiki110 -crash_log crashes/XWIKI-16080.log -target_frame 1 -Dsearch_budget=600
