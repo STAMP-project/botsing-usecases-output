@@ -1,0 +1,13 @@
+org.objectweb.proactive.extensions.dataspaces.exceptions.SpaceNotFoundException: Requested data space is not registered in spaces directory.
+    at org.objectweb.proactive.extensions.dataspaces.vfs.VFSSpacesMountManagerImpl.ensureVirtualSpaceIsMounted(VFSSpacesMountManagerImpl.java:247)
+    at org.objectweb.proactive.extensions.dataspaces.vfs.VFSSpacesMountManagerImpl.resolveFile(VFSSpacesMountManagerImpl.java:159)
+    at org.objectweb.proactive.extensions.dataspaces.vfs.VFSSpacesMountManagerImpl.resolveFile(VFSSpacesMountManagerImpl.java:129)
+    at org.objectweb.proactive.extensions.dataspaces.core.DataSpacesImpl.resolveInputOutput(DataSpacesImpl.java:201)
+    at org.objectweb.proactive.extensions.dataspaces.api.PADataSpaces.resolveOutput(PADataSpaces.java:472)
+    at org.ow2.proactive.scheduler.task.data.TaskProActiveDataspaces$1.call(TaskProActiveDataspaces.java:231)
+    at org.ow2.proactive.scheduler.task.data.TaskProActiveDataspaces$1.call(TaskProActiveDataspaces.java:228)
+    at org.ow2.proactive.scheduler.task.data.TaskProActiveDataspaces.initDataSpace(TaskProActiveDataspaces.java:273)
+    at org.ow2.proactive.scheduler.task.data.TaskProActiveDataspaces.initDataSpaces(TaskProActiveDataspaces.java:228)
+    at org.ow2.proactive.scheduler.task.data.TaskProActiveDataspaces.<init>(TaskProActiveDataspaces.java:118)
+    at org.ow2.proactive.scheduler.task.ProActiveForkedTaskLauncherFactory.createTaskDataspaces(ProActiveForkedTaskLauncherFactory.java:43)
+    at org.ow2.proactive.scheduler.task.TaskLauncher.doTask(TaskLauncher.java:184)
