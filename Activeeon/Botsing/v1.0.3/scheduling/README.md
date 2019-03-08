@@ -29,7 +29,6 @@ and
 apply plugin: eu.stamp_project.botsing.BotsingGradlePlugin
 
 botsing {
-    libsPath="dist/lib/"
     targetFrame="TARGET_FRAME"
     logPath="LOG_FILE_PATH"
     output="DIRECTORY_OUTPUT"
@@ -39,6 +38,5 @@ where TARGET_FRAME, LOG_FILE_PATH and DIRECTORY_OUTPUT should be replace by thei
 
 4/ Run the following commands :
 ```
-$ ./gradlew compileJava
-$ ./gradlew botsing
+$ ./gradlew dist botsing
 ```
