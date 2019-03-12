@@ -1,0 +1,500 @@
+buildscript {
+    repositories {
+        if (project.hasProperty('local')) mavenLocal()
+
+        jcenter()
+
+        maven { url "https://plugins.gradle.org/m2/" }
+        maven { url 'http://repository.activeeon.com/content/groups/proactive/' }
+        maven { url "http://nexus.qmino.com/content/repositories/miredot" }
+    }
+
+    dependencies {
+        classpath "org.objectweb.proactive:programming-build-utils:${programmingVersion}"
+        // needed at runtime by AntStubGenerator...
+        classpath("org.objectweb.proactive:programming-core:${programmingVersion}")
+        classpath('org.hsudbrock:gradle-trang:0.1-proactive') {
+            exclude group: 'xml-apis', module: 'xml-apis'
+        }
+        classpath 'com.github.rholder:gradle-one-jar:1.0.3'
+        classpath 'org.ow2.proactive:gradle-serialver:2.2'
+        classpath 'org.ow2.proactive:gradle-max-nodes-number:0.2'
+        classpath 'org.postgresql:postgresql:9.3-1102-jdbc41'
+        classpath 'org.ajoberstar:gradle-jacoco:0.3.0'
+        classpath('org.gradle.api.plugins:gradle-format-plugin:1.1') {
+            exclude group: 'javassist', module: 'javassist'
+        }
+
+        classpath 'com.qmino:miredot-plugin:2.0-RC3'
+
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.6.1"
+        classpath "com.diffplug.gradle.spotless:spotless:2.4.0"
+        classpath "org.ow2.proactive:coding-rules:1.0.0"
+
+	classpath files('/home/mael/stamp/wp3/botsing-gradle-plugin/build/libs/botsing-gradle-plugin-1.0.0-SNAPSHOT-all.jar')
+        //classpath files('/tmp/test2/botsing-gradle-plugin-1.0.0-SNAPSHOT-all.jar')
+
+        delete "gradle/ext"
+        ant.unjar src: configurations.classpath.find { it.name.startsWith("coding-rules") }, dest: 'gradle/ext'
+
+    }
+}
+
+logging.captureStandardOutput(LogLevel.DEBUG)
+
+//logging {
+//    file ('build.log', LogLevel.DEBUG)
+//    console (LogLevel.INFO)
+//}
+def fileLogger = [
+        onOutput : {
+            File logfile = new File( 'gradle.log' )
+            logfile << it
+        }
+] as org.gradle.api.logging.StandardOutputListener
+
+allprojects { logging.addStandardOutputListener( fileLogger ) }
+
+
+def isWindows = System.properties['os.name'].toLowerCase().contains('windows')
+
+def custom ={ "$rootDir/gradle/${it}.gradle"}
+
+apply plugin: 'java'
+apply plugin: eu.stamp_project.botsing.BotsingGradlePlugin
+apply plugin: 'org.sonarqube'
+apply from: "$rootDir/gradle/ext/coding-format.gradle"
+
+botsing {
+    //required parameters
+    targetFrame="2"
+    logPath="LOG_PATH"
+}
+
+archivesBaseName = 'scheduling' // in case current folder is not named scheduling
+
+project.ext.set('nativeLibsDir', "$rootDir/dist/lib/")
+project.ext.set('schedulingParentFolder', "$rootDir")
+
+apply from: custom("sonar-scheduling")
+apply from: custom("jacoco-scheduling")
+
+configurations {
+    nativeBundle
+    restCli
+    distLib {
+        extendsFrom restCli
+    }
+}
+
+allprojects {
+    apply plugin: 'maven'
+    apply plugin: 'project-report'
+
+
+    group = 'org.ow2.proactive'
+    version = schedulingVersion
+
+    if (project.hasProperty('ci')) {
+        configurations.all {
+            resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+        }
+    }
+
+    configurations.all {
+        resolutionStrategy.force "org.ow2.proactive:scheduler-api:${schedulingVersion}"
+    }
+
+    rootProject.buildscript.repositories.each {
+        repositories.add(it)
+    }
+
+    uploadArchives {
+        repositories {
+            mavenDeployer {
+                snapshotRepository(url: "http://repository.activeeon.com/content/repositories/snapshots/") {
+                    authentication(userName: "${System.getProperty('nexusUsername')}",
+                            password: "${System.getProperty('nexusPassword')}")
+                }
+                repository(url: "http://repository.activeeon.com/content/repositories/releases/") {
+                    authentication(userName: "${System.getProperty('nexusUsername')}",
+                            password: "${System.getProperty('nexusPassword')}")
+                }
+            }
+        }
+    }
+}
+
+ext.javaSubprojects = subprojects.findAll { new File(it.projectDir, "src").exists() }
+ext.serialver = schedulingSerialver
+
+configure(javaSubprojects) {
+    apply plugin: 'java'
+    apply plugin: 'format'
+    apply plugin: 'jacoco'
+
+
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+    compileJava.options.compilerArgs << '-Xlint:-options' // remove warning about bootstrap class path
+
+    dependencies {
+        compile 'log4j:log4j:1.2.17'
+        compile 'com.google.guava:guava:19.0'
+
+        runtime 'org.slf4j:slf4j-log4j12:1.7.12'
+
+        testCompile 'com.google.truth:truth:0.27'
+        testCompile 'junit:junit:4.12'
+        testCompile 'org.hamcrest:hamcrest-junit:2.0.0.0'
+
+        testCompile 'org.mockito:mockito-core:1.10.19'
+        testCompile 'ObjectFaker:ObjectFaker:0.1'
+        testCompile 'com.jayway.awaitility:awaitility:1.6.0'
+        testCompile 'org.apache.commons:commons-lang3:3.4'
+    }
+
+    test {
+        exclude 'functionaltests/**'
+        exclude 'unittests/**'
+        exclude 'unitTests/**'
+        exclude 'performancetests/**'
+
+        if(Boolean.valueOf(System.getProperty("java.awt.headless"))){
+            exclude 'org/ow2/proactive_grid_cloud_portal/cli/**'
+        }
+        systemProperties << ['java.security.policy': file("$rootDir/config/security.java.policy-server").absolutePath]
+        systemProperties << ['file.encoding': 'UTF-8']
+        systemProperties << ['pa.rm.home': rootDir.absolutePath]
+    }
+
+    task serialver(type: serialver.InsertSerialVersionUIDTask) {
+        serialver = rootProject.serialver
+        overwrite = false
+        forceUIDOnException = true
+    }
+
+    format {
+        configurationFile = file("$rootDir/eclipse_formatter_config.xml")
+    }
+
+    jar {
+        manifest {
+            attributes("Implementation-Title": "ProActive",
+                    "Implementation-Version": version,
+                    "Specification-Version": version,
+                    "Implementation-Vendor": "Activeeon - OASIS - INRIA Sophia Antipolis",
+                    "Implementation-URL": "http://proactive.inria.fr"
+            )
+        }
+    }
+}
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.13' //version required
+}
+
+ext.schedulingFunctionalTestConfiguration = {
+
+    include 'functionaltests/StandardTestSuite*'
+
+    if(project.hasProperty('regression')){
+        include 'functionaltests/RegressionTestSuite*'
+    }
+
+    systemProperties << ['pa.rm.home': rootDir.absolutePath]
+    systemProperties << ['pa.scheduler.home': rootDir.absolutePath]
+    systemProperties << ['proactive.communication.protocol': 'pnp']
+    systemProperties << ['proactive.test.timeout': 800000]
+    systemProperties << ['java.awt.headless': 'true']
+    systemProperties << ['java.library.path': project.nativeLibsDir]
+    systemProperties << ['java.security.policy': file("$rootDir/config/security.java.policy-server").absolutePath]
+    systemProperties << ['file.encoding': 'UTF-8']
+
+    if (project.hasProperty('runasme.user')) {
+        systemProperties << ['runasme.user': project.property('runasme.user')]
+    }
+    if (project.hasProperty('runasme.pwd')) {
+        systemProperties << ['runasme.pwd': project.property('runasme.pwd')]
+    }
+    if (project.hasProperty('runasme.key.path')) {
+        systemProperties << ['runasme.key.path': project.property('runasme.key.path')]
+    }
+    if (project.hasProperty('runasme.shared.dir')) {
+        systemProperties << ['runasme.shared.dir': project.property('runasme.shared.dir')]
+    }
+
+    testLogging {
+        exceptionFormat = 'full'
+    }
+    beforeTest { descriptor ->
+        logger.lifecycle("Running: " + descriptor)
+    }
+
+    def createRunAsMeUser = {
+        if (project.hasProperty('runasme.user') && project.hasProperty('runasme.pwd')) {
+            def extension = isWindows ? ".bat" : ""
+            def pb = new java.lang.ProcessBuilder()
+            pb.inheritIO()
+            pb.command(new File(project.rootDir.getAbsoluteFile(), "tools/proactive-users" + extension).getAbsolutePath(), "-C", "-l", project.property('runasme.user'), "-p", project.property('runasme.pwd'), "-g", "user")
+            def process = pb.start()
+            process.waitFor();
+        }
+    }
+
+    def copySchedulingToSharedDirOnWindows = {
+        if (System.properties['os.name'].toLowerCase().contains('windows') && project.hasProperty('runasme.shared.dir')) {
+            project.copy {
+                from project.rootDir
+                into project.property('runasme.shared.dir')
+                include "dist/lib/*"
+                include "dist/script/**"
+                include "config/**"
+            }
+        }
+    }
+
+    def clean = {
+        println project.nativeLibsDir
+
+        if (project.hasProperty('runasme.user')) {
+            def extension = isWindows ? ".bat" : ""
+            def pb = new java.lang.ProcessBuilder()
+            pb.inheritIO()
+            pb.command(new File(project.rootDir.getAbsoluteFile(), "tools/proactive-users" + extension).getAbsolutePath(), "-D", "-l", project.property('runasme.user'))
+            def process = pb.start()
+            process.waitFor();
+        }
+
+        project.javaexec {
+            main = "org.ow2.tests.ProcessCleaner"
+
+            classpath = fileTree(project.nativeLibsDir).include("*.jar") + project(':rm:rm-server').sourceSets.test.output
+
+            systemProperty "java.library.path", project.nativeLibsDir
+        }
+    }
+
+    finalizedBy project.task(project.name + '-clean', { doLast clean })
+    dependsOn project.task(project.name + '-beforetests') << {
+        clean(); createRunAsMeUser(); copySchedulingToSharedDirOnWindows()
+    }
+
+}
+
+ext.schedulingPerformanceTestConfiguration = {
+
+    include 'performancetests/PerformanceTestSuite*'
+
+    systemProperties << ['pa.rm.home': rootDir.absolutePath]
+    systemProperties << ['pa.scheduler.home': rootDir.absolutePath]
+    systemProperties << ['proactive.communication.protocol': 'pnp']
+    systemProperties << ['proactive.test.timeout': 800000]
+    systemProperties << ['java.awt.headless': 'true']
+    systemProperties << ['java.library.path': project.nativeLibsDir]
+    systemProperties << ['java.security.policy': file("$rootDir/config/security.java.policy-server").absolutePath]
+    systemProperties << ['file.encoding': 'UTF-8']
+
+    testLogging {
+        exceptionFormat = 'full'
+    }
+    beforeTest { descriptor ->
+        logger.lifecycle("Running: " + descriptor)
+    }
+
+}
+
+
+dependencies {
+    distLib(project(':scheduler:scheduler-server')) {
+        exclude group: 'javassist', module: 'javassist' // to avoid duplicate (artifact named differently)
+    }
+    distLib project('rm:rm-policy:rm-policy-scheduler')
+    distLib project(':scheduler:scheduler-node')
+    distLib project(':scheduler:scheduler-examples')
+    distLib project(':rm:rm-server')
+    distLib project(':rm:rm-node-updater')
+    distLib(project(':rest:rest-server')) {
+        exclude group: 'javassist', module: 'javassist' // to avoid duplicate (artifact named differently)
+    }
+    restCli project(':rest:rest-cli')
+    distLib project(':rest:rest-client')
+    distLib project(':rest:rest-smartproxy')
+    distLib project(':scheduler:scheduler-smartproxy')
+
+    nativeBundle 'org.jvnet.winp:winp:1.23-proactive:native'
+    nativeBundle 'sigar:sigar:1.7.0-proactive:native'
+    nativeBundle 'net.sf.jpam:libjpam:1.1-proactive:native'
+    nativeBundle 'jsr223:jsr223-powershell:0.2.1:native'
+
+    compile 'org.codehaus.groovy:groovy-all:2.4.12'
+    compile 'commons-io:commons-io:2.5'
+}
+
+task dist(type: Sync) {
+    from configurations.distLib
+    from configurations.runtime
+    from jar
+
+    [project(':scheduler:scheduler-server')].each {
+        from it.configurations.archives.artifacts.files.files
+        if (it.tasks.findByName('testJar')) {
+            from it.testJar.outputs
+        }
+    }
+
+    from {
+        configurations.nativeBundle.collect { zipTree(it) }
+    }
+
+    into file("$rootDir/dist/lib")
+}
+
+defaultTasks 'dist'
+build.dependsOn 'dist'
+
+task scripts
+dist.dependsOn scripts
+
+task cleanScripts
+clean.dependsOn cleanScripts
+
+class CustomCreateStartScripts extends CreateStartScripts {
+
+    //We override the generate() method because Gradle adds "lib/" in the classpath by default.
+    @Override
+    void generate() {
+
+        def generator = new org.gradle.api.internal.plugins.StartScriptGenerator()
+        generator.applicationName = getApplicationName()
+        generator.mainClassName = getMainClassName()
+        generator.defaultJvmOpts = ["-server", "-Dfile.encoding=UTF-8"]
+        generator.optsEnvironmentVar = getOptsEnvironmentVar()
+        generator.exitEnvironmentVar = getExitEnvironmentVar()
+        if (getApplicationName().equals("proactive-client")) {
+            generator.classpath = ["dist/lib/*"]
+        } else {
+            generator.classpath = ["dist/lib/*", "addons", "addons/*"]
+        }
+        generator.scriptRelPath = "bin/${getUnixScript().name}"
+
+        generator.windowsStartScriptGenerator.template = project.resources.text.fromFile("src/main/resources/org/gradle/api/internal/plugins/windowsStartScript.txt")
+        generator.unixStartScriptGenerator.template = project.resources.text.fromFile("src/main/resources/org/gradle/api/internal/plugins/unixStartScript.txt")
+
+        generator.generateUnixScript(getUnixScript())
+        generator.generateWindowsScript(getWindowsScript())
+
+    }
+}
+
+def createStartScripts(className, name, String outputFolder) {
+    def scriptTask = project.tasks.create(name: ('script' + name), type: CustomCreateStartScripts) {
+        mainClassName className
+        applicationName name
+        outputDir project.file("build/" + outputFolder)
+        classpath = project.configurations.distLib // will be replaced with CustomCreateStartScripts
+    }
+    scriptTask.doLast { // otherwise outputDir would get deleted by clean tasks
+        project.copy {
+            from project.file("build/" + outputFolder)
+            into project.file(outputFolder)
+        }
+    }
+    project.scripts.dependsOn scriptTask
+    project.cleanScripts.dependsOn 'cleanScript' + name
+}
+
+createStartScripts('org.ow2.proactive.scheduler.util.SchedulerStarter', 'proactive-server', 'bin')
+createStartScripts('org.ow2.proactive_grid_cloud_portal.cli.CommonEntryPoint', 'proactive-client', 'bin')
+createStartScripts('org.ow2.proactive.resourcemanager.utils.RMNodeStarter', 'proactive-node', 'bin')
+createStartScripts('org.ow2.proactive.resourcemanager.updater.RMNodeUpdater', 'proactive-node-autoupdate', 'bin')
+createStartScripts('org.objectweb.proactive.extensions.vfsprovider.console.PADataserverStarter', 'proactive-dataserver', 'tools')
+createStartScripts('org.objectweb.proactive.extensions.vfsprovider.gui.ServerBrowser', 'proactive-dataserver-gui', 'tools')
+createStartScripts('org.ow2.proactive.authentication.crypto.CreateCredentials', 'proactive-create-cred', 'tools')
+createStartScripts('org.ow2.proactive.authentication.crypto.KeyGen', 'proactive-key-gen', 'tools')
+createStartScripts('org.ow2.proactive.scheduler.authentication.ManageUsers', 'proactive-users', 'tools')
+createStartScripts('org.ow2.proactive.utils.PAMRRouterStarter', 'proactive-router', 'bin')
+
+subprojects {
+    tasks.withType(Test).matching { it.name == 'functionalTest' }*.dependsOn dist
+    tasks.withType(Test).matching { it.name == 'performanceTest' }*.dependsOn dist
+}
+
+subprojects {
+    task allDeps(type: DependencyReportTask) {}
+}
+
+apply plugin: 'distribution'
+
+distributions {
+    main {
+        baseName project.archivesBaseName
+        contents {
+            from '.'
+            include "dist/**", "config/**", "bin/**", "samples/**", "addons/**", "LICENSE*", "README*", 'tools/**'
+        }
+    }
+}
+
+distZip.dependsOn dist
+
+artifacts {
+    archives distZip
+}
+
+// credentials are generated during release process
+def createGenerateCredentialTask(String name, List<String> cliArgs) {
+    project.tasks.create(name: ('generateCredentials' + name), type: JavaExec) {
+        classpath = project(':common:common-client').sourceSets.main.runtimeClasspath
+        main = 'org.ow2.proactive.authentication.crypto.CreateCredentials'
+        args = cliArgs
+    }
+}
+
+createGenerateCredentialTask('Rm', [ '-F', 'config/authentication/keys/pub.key',
+                                     '-l', 'rm', '-p', 'rm_pwd', '-o', 'config/authentication/rm.cred'])
+createGenerateCredentialTask('Scheduler', ['-F', 'config/authentication/keys/pub.key',
+                                           '-l', 'scheduler', '-p', 'scheduler_pwd', '-o', 'config/authentication/scheduler.cred'])
+createGenerateCredentialTask('Admin', ['-F', 'config/authentication/keys/pub.key',
+                                       '-l', 'admin', '-p', 'admin', '-o', 'config/authentication/admin_user.cred'])
+createGenerateCredentialTask('Node', ['-F', 'config/authentication/keys/pub.key',
+                                      '-l', 'rm', '-p', 'rm_pwd', '-o', 'rm/rm-node/src/main/resources/config/authentication/rm.cred'])
+
+task generateCredentials
+generateCredentials.dependsOn generateCredentialsAdmin, generateCredentialsScheduler, generateCredentialsRm, generateCredentialsNode
+
+def exportedProjects= [
+        ":common:common-api",
+        ":common:common-client",
+        ":common:common-db",
+        ":scheduler:scheduler-api",
+        ":scheduler:scheduler-client",
+        ":scheduler:scheduler-examples",
+        ":scheduler:scheduler-node",
+        ":scheduler:scheduler-smartproxy",
+        ":scheduler:scheduler-smartproxy-common",
+        ":rest:rest-client",
+        ":rest:rest-smartproxy",
+        ":rm:rm-client",
+]
+
+task alljavadoc(type: org.gradle.api.tasks.javadoc.Javadoc) {
+    source exportedProjects.collect { project(it).sourceSets.main.allJava }
+    classpath = files(exportedProjects.collect { project(it).sourceSets.main.compileClasspath })
+    destinationDir = file("${buildDir}/docs/javadoc")
+    configure(options) {
+        links = [
+                'https://docs.oracle.com/javase/8/docs/api/',
+                'https://docs.jboss.org/hibernate/orm/5.1/javadocs/',
+                'https://docs.jboss.org/hibernate/jpa/2.1/api/'
+                ]
+    }
+
+}
+
+task alljavadocZip(type: Zip, dependsOn: alljavadoc) {
+    from "${buildDir}/docs/javadoc"
+    archiveName project.archivesBaseName + '-' + project.version + '-javadoc.zip'
+    destinationDir file("${buildDir}/distributions")
+}
