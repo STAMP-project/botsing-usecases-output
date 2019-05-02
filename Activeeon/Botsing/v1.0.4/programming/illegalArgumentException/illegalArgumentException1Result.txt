@@ -1,0 +1,374 @@
+Initialized native services in: /home/mael/.gradle/native
+The client will now receive all logging from the daemon (pid: 31261). The daemon log file: /home/mael/.gradle/daemon/4.10.2/daemon-31261.out.log
+Starting 7th build in daemon [uptime: 22 mins 56.993 secs, performance: 32%, no major garbage collections]
+Using 8 worker leases.
+Starting Build
+Settings evaluated using settings file '/home/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.4/programming/settings.gradle'.
+Projects loaded. Root project using build file '/home/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.4/programming/build.gradle'.
+Included projects: [root project 'programming']
+
+> Configure project :
+Evaluating root project 'programming' using build file '/home/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.4/programming/build.gradle'.
+Compiling build file '/home/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.4/programming/build.gradle' using SubsetScriptTransformer.
+Compiling build file '/home/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.4/programming/build.gradle' using BuildScriptTransformer.
+All projects evaluated.
+Selected primary task 'botsing' from project :
+Tasks to be executed: [task ':botsing']
+:botsing (Thread[Task worker for ':',5,main]) started.
+18:01:03.776 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.objectweb.proactive.core.ProActiveRuntimeException
+18:01:03.780 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: java.lang.Thread.run(Thread:745)
+18:01:03.780 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: java.lang.Thread
+18:01:03.949 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 24.
+
+> Task :botsing
+Task ':botsing' is not up-to-date because:
+  Task has not declared any outputs despite executing actions.
+The following parameters will be used: 
+- logPath: /home/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.4/programming/illegalArgumentException/illegalArgumentException.log
+- targetFrame: 10
+- output: illegalArgumentException/
+- searchBudget: 60
+- botsingVersion: 1.0.4
+- mavenArtifacts: [
+        org.objectweb.proactive:programming-core:8.4.0,
+        org.objectweb.proactive:programming-extension-pamr:8.4.0,
+        org.objectweb.proactive:programming-extension-pnp:8.4.0,
+        org.objectweb.proactive:programming-extension-pnpssl:8.4.0]
+Running Botsing with target frame=10.
+
+18:01:06.451 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+18:01:06.457 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+18:01:06.458 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+18:01:06.470 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+Exception in thread "main" java.lang.NullPointerException
+        at eu.stamp.botsing.ga.strategy.operators.GuidedSearchUtility.getTargetInstruction(GuidedSearchUtility.java:195)
+        at eu.stamp.botsing.ga.strategy.operators.GuidedSearchUtility.getPublicCalls(GuidedSearchUtility.java:77)
+        at eu.stamp.botsing.ga.strategy.operators.GuidedSearchUtility.getPublicCalls(GuidedSearchUtility.java:116)
+        at eu.stamp.botsing.fitnessfunction.testcase.factories.RootMethodTestChromosomeFactory.fillPublicCalls(RootMethodTestChromosomeFactory.java:197)
+        at eu.stamp.botsing.fitnessfunction.testcase.factories.RootMethodTestChromosomeFactory.reset(RootMethodTestChromosomeFactory.java:191)
+        at eu.stamp.botsing.fitnessfunction.testcase.factories.RootMethodTestChromosomeFactory.<init>(RootMethodTestChromosomeFactory.java:60)
+        at eu.stamp.botsing.testgeneration.strategy.BotsingIndividualStrategy.getChromosomeFactory(BotsingIndividualStrategy.java:124)
+        at eu.stamp.botsing.testgeneration.strategy.BotsingIndividualStrategy.getGA(BotsingIndividualStrategy.java:117)
+        at eu.stamp.botsing.testgeneration.strategy.BotsingIndividualStrategy.generateTests(BotsingIndividualStrategy.java:69)
+        at eu.stamp.botsing.reproduction.CrashReproduction.generateCrashReproductionTests(CrashReproduction.java:131)
+        at eu.stamp.botsing.reproduction.CrashReproduction.execute(CrashReproduction.java:80)
+        at eu.stamp.botsing.Botsing.parseCommandLine(Botsing.java:78)
+        at eu.stamp.botsing.Botsing.main(Botsing.java:163)
+
+> Task :botsing
+Error executing botsing-reproduction
+Running Botsing with target frame=9.
+
+18:03:03.762 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.objectweb.proactive.core.ProActiveRuntimeException
+18:03:03.766 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.objectweb.proactive.core.body.ActiveBody.run(ActiveBody:175)
+18:03:03.766 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.objectweb.proactive.core.body.ActiveBody
+18:03:04.729 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 24.
+log4j:ERROR A "org.apache.log4j.ConsoleAppender" object is not assignable to a "org.apache.log4j.Appender" variable.
+log4j:ERROR The class "org.apache.log4j.Appender" was loaded by 
+log4j:ERROR [org.evosuite.instrumentation.InstrumentingClassLoader@5606ac94] whereas object of type 
+log4j:ERROR "org.apache.log4j.ConsoleAppender" was loaded by [sun.misc.Launcher$AppClassLoader@70dea4e].
+log4j:ERROR Could not instantiate appender named "CONSOLE".
+18:03:09.179 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+18:03:09.187 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+18:03:09.187 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+18:03:09.197 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+Exception in thread "main" java.lang.NullPointerException
+        at eu.stamp.botsing.ga.strategy.operators.GuidedSearchUtility.getPublicCalls(GuidedSearchUtility.java:79)
+        at eu.stamp.botsing.ga.strategy.operators.GuidedSearchUtility.getPublicCalls(GuidedSearchUtility.java:116)
+        at eu.stamp.botsing.fitnessfunction.testcase.factories.RootMethodTestChromosomeFactory.fillPublicCalls(RootMethodTestChromosomeFactory.java:197)
+        at eu.stamp.botsing.fitnessfunction.testcase.factories.RootMethodTestChromosomeFactory.reset(RootMethodTestChromosomeFactory.java:191)
+        at eu.stamp.botsing.fitnessfunction.testcase.factories.RootMethodTestChromosomeFactory.<init>(RootMethodTestChromosomeFactory.java:60)
+        at eu.stamp.botsing.testgeneration.strategy.BotsingIndividualStrategy.getChromosomeFactory(BotsingIndividualStrategy.java:124)
+        at eu.stamp.botsing.testgeneration.strategy.BotsingIndividualStrategy.getGA(BotsingIndividualStrategy.java:117)
+        at eu.stamp.botsing.testgeneration.strategy.BotsingIndividualStrategy.generateTests(BotsingIndividualStrategy.java:69)
+        at eu.stamp.botsing.reproduction.CrashReproduction.generateCrashReproductionTests(CrashReproduction.java:131)
+        at eu.stamp.botsing.reproduction.CrashReproduction.execute(CrashReproduction.java:80)
+        at eu.stamp.botsing.Botsing.parseCommandLine(Botsing.java:78)
+        at eu.stamp.botsing.Botsing.main(Botsing.java:163)
+
+> Task :botsing
+Error executing botsing-reproduction
+Running Botsing with target frame=8.
+
+18:05:03.722 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.objectweb.proactive.core.ProActiveRuntimeException
+18:05:03.725 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.objectweb.proactive.core.body.ActiveBody$FIFORunActive.runActivity(ActiveBody$FIFORunActive:336)
+18:05:03.725 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.objectweb.proactive.core.body.ActiveBody$FIFORunActive
+18:05:04.057 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 24.
+18:05:06.423 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+18:05:06.430 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+18:05:06.430 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+18:05:06.439 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+Exception in thread "main" java.lang.NullPointerException
+        at eu.stamp.botsing.ga.strategy.operators.GuidedSearchUtility.getPublicCalls(GuidedSearchUtility.java:79)
+        at eu.stamp.botsing.ga.strategy.operators.GuidedSearchUtility.getPublicCalls(GuidedSearchUtility.java:116)
+        at eu.stamp.botsing.fitnessfunction.testcase.factories.RootMethodTestChromosomeFactory.fillPublicCalls(RootMethodTestChromosomeFactory.java:197)
+        at eu.stamp.botsing.fitnessfunction.testcase.factories.RootMethodTestChromosomeFactory.reset(RootMethodTestChromosomeFactory.java:191)
+        at eu.stamp.botsing.fitnessfunction.testcase.factories.RootMethodTestChromosomeFactory.<init>(RootMethodTestChromosomeFactory.java:60)
+        at eu.stamp.botsing.testgeneration.strategy.BotsingIndividualStrategy.getChromosomeFactory(BotsingIndividualStrategy.java:124)
+        at eu.stamp.botsing.testgeneration.strategy.BotsingIndividualStrategy.getGA(BotsingIndividualStrategy.java:117)
+        at eu.stamp.botsing.testgeneration.strategy.BotsingIndividualStrategy.generateTests(BotsingIndividualStrategy.java:69)
+        at eu.stamp.botsing.reproduction.CrashReproduction.generateCrashReproductionTests(CrashReproduction.java:131)
+        at eu.stamp.botsing.reproduction.CrashReproduction.execute(CrashReproduction.java:80)
+        at eu.stamp.botsing.Botsing.parseCommandLine(Botsing.java:78)
+        at eu.stamp.botsing.Botsing.main(Botsing.java:163)
+
+> Task :botsing
+Error executing botsing-reproduction
+Running Botsing with target frame=7.
+
+18:07:03.724 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.objectweb.proactive.core.ProActiveRuntimeException
+18:07:03.727 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.objectweb.proactive.Service.fifoServing(Service:146)
+18:07:03.727 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.objectweb.proactive.Service
+18:07:04.652 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 24.
+18:07:08.801 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+18:07:08.806 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+18:07:08.807 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+18:07:08.814 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+Exception in thread "main" java.lang.NullPointerException
+        at eu.stamp.botsing.ga.strategy.operators.GuidedSearchUtility.getPublicCalls(GuidedSearchUtility.java:79)
+        at eu.stamp.botsing.ga.strategy.operators.GuidedSearchUtility.getPublicCalls(GuidedSearchUtility.java:116)
+        at eu.stamp.botsing.fitnessfunction.testcase.factories.RootMethodTestChromosomeFactory.fillPublicCalls(RootMethodTestChromosomeFactory.java:197)
+        at eu.stamp.botsing.fitnessfunction.testcase.factories.RootMethodTestChromosomeFactory.reset(RootMethodTestChromosomeFactory.java:191)
+        at eu.stamp.botsing.fitnessfunction.testcase.factories.RootMethodTestChromosomeFactory.<init>(RootMethodTestChromosomeFactory.java:60)
+        at eu.stamp.botsing.testgeneration.strategy.BotsingIndividualStrategy.getChromosomeFactory(BotsingIndividualStrategy.java:124)
+        at eu.stamp.botsing.testgeneration.strategy.BotsingIndividualStrategy.getGA(BotsingIndividualStrategy.java:117)
+        at eu.stamp.botsing.testgeneration.strategy.BotsingIndividualStrategy.generateTests(BotsingIndividualStrategy.java:69)
+        at eu.stamp.botsing.reproduction.CrashReproduction.generateCrashReproductionTests(CrashReproduction.java:131)
+        at eu.stamp.botsing.reproduction.CrashReproduction.execute(CrashReproduction.java:80)
+        at eu.stamp.botsing.Botsing.parseCommandLine(Botsing.java:78)
+        at eu.stamp.botsing.Botsing.main(Botsing.java:163)
+
+> Task :botsing
+Error executing botsing-reproduction
+Running Botsing with target frame=6.
+
+18:09:03.736 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.objectweb.proactive.core.ProActiveRuntimeException
+18:09:03.739 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.objectweb.proactive.Service.blockingServeOldest(Service:181)
+18:09:03.739 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.objectweb.proactive.Service
+18:09:04.675 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 24.
+18:09:08.761 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+18:09:08.768 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+18:09:08.768 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+18:09:08.775 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+Exception in thread "main" java.lang.NullPointerException
+        at eu.stamp.botsing.ga.strategy.operators.GuidedSearchUtility.getPublicCalls(GuidedSearchUtility.java:79)
+        at eu.stamp.botsing.ga.strategy.operators.GuidedSearchUtility.getPublicCalls(GuidedSearchUtility.java:116)
+        at eu.stamp.botsing.fitnessfunction.testcase.factories.RootMethodTestChromosomeFactory.fillPublicCalls(RootMethodTestChromosomeFactory.java:197)
+        at eu.stamp.botsing.fitnessfunction.testcase.factories.RootMethodTestChromosomeFactory.reset(RootMethodTestChromosomeFactory.java:191)
+        at eu.stamp.botsing.fitnessfunction.testcase.factories.RootMethodTestChromosomeFactory.<init>(RootMethodTestChromosomeFactory.java:60)
+        at eu.stamp.botsing.testgeneration.strategy.BotsingIndividualStrategy.getChromosomeFactory(BotsingIndividualStrategy.java:124)
+        at eu.stamp.botsing.testgeneration.strategy.BotsingIndividualStrategy.getGA(BotsingIndividualStrategy.java:117)
+        at eu.stamp.botsing.testgeneration.strategy.BotsingIndividualStrategy.generateTests(BotsingIndividualStrategy.java:69)
+        at eu.stamp.botsing.reproduction.CrashReproduction.generateCrashReproductionTests(CrashReproduction.java:131)
+        at eu.stamp.botsing.reproduction.CrashReproduction.execute(CrashReproduction.java:80)
+        at eu.stamp.botsing.Botsing.parseCommandLine(Botsing.java:78)
+        at eu.stamp.botsing.Botsing.main(Botsing.java:163)
+
+> Task :botsing
+Error executing botsing-reproduction
+Running Botsing with target frame=5.
+
+18:11:03.725 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.objectweb.proactive.core.ProActiveRuntimeException
+18:11:03.728 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.objectweb.proactive.Service.blockingServeOldest(Service:206)
+18:11:03.728 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.objectweb.proactive.Service
+18:11:04.620 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 24.
+18:11:08.426 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+18:11:08.433 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+18:11:08.433 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+18:11:08.441 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+Exception in thread "main" java.lang.NullPointerException
+        at eu.stamp.botsing.ga.strategy.operators.GuidedSearchUtility.getPublicCalls(GuidedSearchUtility.java:79)
+        at eu.stamp.botsing.ga.strategy.operators.GuidedSearchUtility.getPublicCalls(GuidedSearchUtility.java:116)
+        at eu.stamp.botsing.fitnessfunction.testcase.factories.RootMethodTestChromosomeFactory.fillPublicCalls(RootMethodTestChromosomeFactory.java:197)
+        at eu.stamp.botsing.fitnessfunction.testcase.factories.RootMethodTestChromosomeFactory.reset(RootMethodTestChromosomeFactory.java:191)
+        at eu.stamp.botsing.fitnessfunction.testcase.factories.RootMethodTestChromosomeFactory.<init>(RootMethodTestChromosomeFactory.java:60)
+        at eu.stamp.botsing.testgeneration.strategy.BotsingIndividualStrategy.getChromosomeFactory(BotsingIndividualStrategy.java:124)
+        at eu.stamp.botsing.testgeneration.strategy.BotsingIndividualStrategy.getGA(BotsingIndividualStrategy.java:117)
+        at eu.stamp.botsing.testgeneration.strategy.BotsingIndividualStrategy.generateTests(BotsingIndividualStrategy.java:69)
+        at eu.stamp.botsing.reproduction.CrashReproduction.generateCrashReproductionTests(CrashReproduction.java:131)
+        at eu.stamp.botsing.reproduction.CrashReproduction.execute(CrashReproduction.java:80)
+        at eu.stamp.botsing.Botsing.parseCommandLine(Botsing.java:78)
+        at eu.stamp.botsing.Botsing.main(Botsing.java:163)
+
+> Task :botsing
+Error executing botsing-reproduction
+Running Botsing with target frame=4.
+
+18:13:03.732 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.objectweb.proactive.core.ProActiveRuntimeException
+18:13:03.735 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.objectweb.proactive.core.body.AbstractBody.serve(AbstractBody:426)
+18:13:03.735 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.objectweb.proactive.core.body.AbstractBody
+18:13:04.616 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 24.
+log4j:ERROR A "org.apache.log4j.ConsoleAppender" object is not assignable to a "org.apache.log4j.Appender" variable.
+log4j:ERROR The class "org.apache.log4j.Appender" was loaded by 
+log4j:ERROR [org.evosuite.instrumentation.InstrumentingClassLoader@5606ac94] whereas object of type 
+log4j:ERROR "org.apache.log4j.ConsoleAppender" was loaded by [sun.misc.Launcher$AppClassLoader@70dea4e].
+log4j:ERROR Could not instantiate appender named "CONSOLE".
+18:13:09.269 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+18:13:09.276 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+18:13:09.276 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+18:13:09.288 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+Exception in thread "main" java.lang.NullPointerException
+        at eu.stamp.botsing.ga.strategy.operators.GuidedSearchUtility.getPublicCalls(GuidedSearchUtility.java:79)
+        at eu.stamp.botsing.ga.strategy.operators.GuidedSearchUtility.getPublicCalls(GuidedSearchUtility.java:116)
+        at eu.stamp.botsing.fitnessfunction.testcase.factories.RootMethodTestChromosomeFactory.fillPublicCalls(RootMethodTestChromosomeFactory.java:197)
+        at eu.stamp.botsing.fitnessfunction.testcase.factories.RootMethodTestChromosomeFactory.reset(RootMethodTestChromosomeFactory.java:191)
+        at eu.stamp.botsing.fitnessfunction.testcase.factories.RootMethodTestChromosomeFactory.<init>(RootMethodTestChromosomeFactory.java:60)
+        at eu.stamp.botsing.testgeneration.strategy.BotsingIndividualStrategy.getChromosomeFactory(BotsingIndividualStrategy.java:124)
+        at eu.stamp.botsing.testgeneration.strategy.BotsingIndividualStrategy.getGA(BotsingIndividualStrategy.java:117)
+        at eu.stamp.botsing.testgeneration.strategy.BotsingIndividualStrategy.generateTests(BotsingIndividualStrategy.java:69)
+        at eu.stamp.botsing.reproduction.CrashReproduction.generateCrashReproductionTests(CrashReproduction.java:131)
+        at eu.stamp.botsing.reproduction.CrashReproduction.execute(CrashReproduction.java:80)
+        at eu.stamp.botsing.Botsing.parseCommandLine(Botsing.java:78)
+        at eu.stamp.botsing.Botsing.main(Botsing.java:163)
+
+> Task :botsing
+Error executing botsing-reproduction
+Running Botsing with target frame=3.
+
+18:15:03.740 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.objectweb.proactive.core.ProActiveRuntimeException
+18:15:03.743 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.objectweb.proactive.core.body.BodyImpl$ActiveLocalBodyStrategy.serve(BodyImpl$ActiveLocalBodyStrategy:485)
+18:15:03.743 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.objectweb.proactive.core.body.BodyImpl$ActiveLocalBodyStrategy
+18:15:04.558 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 24.
+log4j:ERROR A "org.apache.log4j.ConsoleAppender" object is not assignable to a "org.apache.log4j.Appender" variable.
+log4j:ERROR The class "org.apache.log4j.Appender" was loaded by 
+log4j:ERROR [org.evosuite.instrumentation.InstrumentingClassLoader@2b0c3b1a] whereas object of type 
+log4j:ERROR "org.apache.log4j.ConsoleAppender" was loaded by [sun.misc.Launcher$AppClassLoader@70dea4e].
+log4j:ERROR Could not instantiate appender named "CONSOLE".
+log4j:WARN No appenders could be found for logger (proactive.configuration).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+18:15:08.011 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+18:15:08.017 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+18:15:08.018 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+18:15:08.027 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+Exception in thread "main" java.lang.NullPointerException
+        at eu.stamp.botsing.ga.strategy.operators.GuidedSearchUtility.getPublicCalls(GuidedSearchUtility.java:79)
+        at eu.stamp.botsing.ga.strategy.operators.GuidedSearchUtility.getPublicCalls(GuidedSearchUtility.java:116)
+        at eu.stamp.botsing.fitnessfunction.testcase.factories.RootMethodTestChromosomeFactory.fillPublicCalls(RootMethodTestChromosomeFactory.java:197)
+        at eu.stamp.botsing.fitnessfunction.testcase.factories.RootMethodTestChromosomeFactory.reset(RootMethodTestChromosomeFactory.java:191)
+        at eu.stamp.botsing.fitnessfunction.testcase.factories.RootMethodTestChromosomeFactory.<init>(RootMethodTestChromosomeFactory.java:60)
+        at eu.stamp.botsing.testgeneration.strategy.BotsingIndividualStrategy.getChromosomeFactory(BotsingIndividualStrategy.java:124)
+        at eu.stamp.botsing.testgeneration.strategy.BotsingIndividualStrategy.getGA(BotsingIndividualStrategy.java:117)
+        at eu.stamp.botsing.testgeneration.strategy.BotsingIndividualStrategy.generateTests(BotsingIndividualStrategy.java:69)
+        at eu.stamp.botsing.reproduction.CrashReproduction.generateCrashReproductionTests(CrashReproduction.java:131)
+        at eu.stamp.botsing.reproduction.CrashReproduction.execute(CrashReproduction.java:80)
+        at eu.stamp.botsing.Botsing.parseCommandLine(Botsing.java:78)
+        at eu.stamp.botsing.Botsing.main(Botsing.java:163)
+
+> Task :botsing
+Error executing botsing-reproduction
+Running Botsing with target frame=2.
+
+18:17:03.746 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.objectweb.proactive.core.ProActiveRuntimeException
+18:17:03.749 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.objectweb.proactive.core.body.BodyImpl$ActiveLocalBodyStrategy.serveInternal(BodyImpl$ActiveLocalBodyStrategy:552)
+18:17:03.749 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.objectweb.proactive.core.body.BodyImpl$ActiveLocalBodyStrategy
+18:17:04.613 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 24.
+log4j:ERROR A "org.apache.log4j.ConsoleAppender" object is not assignable to a "org.apache.log4j.Appender" variable.
+log4j:ERROR The class "org.apache.log4j.Appender" was loaded by 
+log4j:ERROR [org.evosuite.instrumentation.InstrumentingClassLoader@5606ac94] whereas object of type 
+log4j:ERROR "org.apache.log4j.ConsoleAppender" was loaded by [sun.misc.Launcher$AppClassLoader@70dea4e].
+log4j:ERROR Could not instantiate appender named "CONSOLE".
+log4j:WARN No appenders could be found for logger (proactive.configuration).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+18:17:07.994 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+18:17:08.001 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+18:17:08.001 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+18:17:08.010 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+Exception in thread "main" java.lang.NullPointerException
+        at eu.stamp.botsing.ga.strategy.operators.GuidedSearchUtility.getPublicCalls(GuidedSearchUtility.java:79)
+        at eu.stamp.botsing.ga.strategy.operators.GuidedSearchUtility.getPublicCalls(GuidedSearchUtility.java:116)
+        at eu.stamp.botsing.fitnessfunction.testcase.factories.RootMethodTestChromosomeFactory.fillPublicCalls(RootMethodTestChromosomeFactory.java:197)
+        at eu.stamp.botsing.fitnessfunction.testcase.factories.RootMethodTestChromosomeFactory.reset(RootMethodTestChromosomeFactory.java:191)
+        at eu.stamp.botsing.fitnessfunction.testcase.factories.RootMethodTestChromosomeFactory.<init>(RootMethodTestChromosomeFactory.java:60)
+        at eu.stamp.botsing.testgeneration.strategy.BotsingIndividualStrategy.getChromosomeFactory(BotsingIndividualStrategy.java:124)
+        at eu.stamp.botsing.testgeneration.strategy.BotsingIndividualStrategy.getGA(BotsingIndividualStrategy.java:117)
+        at eu.stamp.botsing.testgeneration.strategy.BotsingIndividualStrategy.generateTests(BotsingIndividualStrategy.java:69)
+        at eu.stamp.botsing.reproduction.CrashReproduction.generateCrashReproductionTests(CrashReproduction.java:131)
+        at eu.stamp.botsing.reproduction.CrashReproduction.execute(CrashReproduction.java:80)
+        at eu.stamp.botsing.Botsing.parseCommandLine(Botsing.java:78)
+        at eu.stamp.botsing.Botsing.main(Botsing.java:163)
+
+> Task :botsing
+Error executing botsing-reproduction
+Running Botsing with target frame=1.
+
+18:19:03.756 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: org.objectweb.proactive.core.ProActiveRuntimeException
+18:19:03.758 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.objectweb.proactive.core.body.request.RequestImpl.serve(RequestImpl:163)
+18:19:03.759 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.objectweb.proactive.core.body.request.RequestImpl
+18:19:04.501 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 24.
+log4j:ERROR A "org.apache.log4j.ConsoleAppender" object is not assignable to a "org.apache.log4j.Appender" variable.
+log4j:ERROR The class "org.apache.log4j.Appender" was loaded by 
+log4j:ERROR [org.evosuite.instrumentation.InstrumentingClassLoader@2b0c3b1a] whereas object of type 
+log4j:ERROR "org.apache.log4j.ConsoleAppender" was loaded by [sun.misc.Launcher$AppClassLoader@70dea4e].
+log4j:ERROR Could not instantiate appender named "CONSOLE".
+18:19:08.657 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+18:19:08.664 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+18:19:08.664 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+18:19:08.672 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+18:19:08.672 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+18:19:08.672 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+18:19:08.672 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+18:19:08.672 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is serve
+18:19:08.679 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+18:19:13.992 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 3.0
+18:19:13.992 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. PT: 5 seconds
+18:19:13.993 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+18:19:14.000 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+18:19:14.000 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+18:19:14.000 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+18:19:14.000 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+18:19:14.000 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is serve
+18:19:14.002 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+18:19:14.002 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+18:19:14.002 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+18:19:14.002 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+18:19:14.002 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is serve
+Exception in thread "Monitoring the Futures" org.evosuite.testcase.execution.TestCaseExecutor$TimeoutExceeded
+        at org.evosuite.testcase.execution.ExecutionTracer.checkTimeout(ExecutionTracer.java:387)
+        at org.objectweb.proactive.core.body.future.FutureMonitoring.monitoringDelay(FutureMonitoring.java:86)
+        at org.objectweb.proactive.core.body.future.FutureMonitoring.run(FutureMonitoring.java:167)
+        at java.lang.Thread.run(Thread.java:748)
+18:19:16.087 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 200
+18:19:17.435 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 300
+18:19:18.553 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 400
+18:19:24.575 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 500
+18:19:25.833 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 600
+18:19:26.840 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 700
+18:19:27.726 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 800
+18:19:28.452 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 900
+18:19:34.751 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1000
+18:19:35.362 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1100
+18:19:36.122 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1200
+18:19:41.832 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1300
+18:19:42.574 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1400
+18:19:43.172 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1500
+18:19:43.693 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1600
+18:19:44.673 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1700
+18:19:45.257 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1800
+18:19:45.817 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1900
+18:19:49.413 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 2000
+18:19:50.050 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 2100
+18:19:50.717 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 2200
+18:19:51.670 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 2300
+18:19:52.432 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 2400
+18:19:53.146 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 2500
+18:19:53.854 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 2600
+18:19:54.593 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 2700
+18:20:00.290 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 2800
+18:20:01.175 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 2900
+18:20:01.902 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 3000
+18:20:05.660 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 3100
+18:20:11.702 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - MaxTime :                         63 / 60           Finished!
+18:20:11.735 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 3200
+18:20:11.735 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - MaxTime :                         63 / 60           Finished!
+18:20:11.735 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+18:20:11.735 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. PT: 5 seconds
+18:20:11.735 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is not covered! The best solution has 3.0 fitness value.
+18:20:11.736 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The best test is:(non-minimized version:
+)
+18:20:11.739 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+18:20:11.742 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+18:20:11.748 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'RequestImpl_ESTest' to illegalArgumentException
+18:20:11.765 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
+:botsing (Thread[Task worker for ':',5,main]) completed. Took 19 mins 8.575 secs.

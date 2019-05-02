@@ -1,0 +1,6 @@
+java.lang.IllegalStateException: FutureProxy receives a reply and the current target field is not null. Current target is [ex:org.objectweb.proactive.core.body.exceptions.FutureMonitoringPingFailureException] while reply's target is [org.objectweb.proactive.core.util.wrapper.BooleanWrapper]
+    at org.objectweb.proactive.core.body.future.FutureProxy.receiveReply(FutureProxy.java:231)
+    at org.objectweb.proactive.core.body.future.FuturePool.receiveFutureValue(FuturePool.java:270)
+    at org.objectweb.proactive.core.body.reply.ReplyReceiverImpl.receiveReply(ReplyReceiverImpl.java:48)
+    at org.objectweb.proactive.core.body.HalfBody.internalReceiveReply(HalfBody.java:137)
+    at org.objectweb.proactive.core.body.AbstractBody.receiveReply(AbstractBody.java:245)

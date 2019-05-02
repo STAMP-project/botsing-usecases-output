@@ -1,0 +1,12 @@
+Caused by: org.objectweb.proactive.core.body.request.ServeException: Error while serving
+    at org.objectweb.proactive.core.body.request.RequestImpl.serveInternal(RequestImpl.java:216)
+    at org.objectweb.proactive.core.body.request.RequestImpl.serve(RequestImpl.java:160)
+    at org.objectweb.proactive.core.body.BodyImpl$ActiveLocalBodyStrategy.serveInternal(BodyImpl.java:552)
+    at org.objectweb.proactive.core.body.BodyImpl$ActiveLocalBodyStrategy.serve(BodyImpl.java:485)
+    at org.objectweb.proactive.core.body.AbstractBody.serve(AbstractBody.java:426)
+    at org.objectweb.proactive.Service.blockingServeOldest(Service.java:206)
+    at org.objectweb.proactive.Service.blockingServeOldest(Service.java:181)
+    at org.objectweb.proactive.Service.fifoServing(Service.java:146)
+    at org.objectweb.proactive.core.body.ActiveBody$FIFORunActive.runActivity(ActiveBody.java:336)
+    at org.objectweb.proactive.core.body.ActiveBody.run(ActiveBody.java:175)
+    at java.lang.Thread.run(Thread.java:745)
