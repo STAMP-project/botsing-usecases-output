@@ -38,4 +38,5 @@ Exception in thread "main" java.lang.NullPointerException
 
 ## Execution result
 
-The emtpy test [HalfBody_ESTest.java](generatedTest/org/objectweb/proactive/core/body/HalfBody_ESTest.java) was generated with frame level=4 and the emtpy test [FuturePool_ESTest.java](generatedTest/org/objectweb/proactive/core/body/future/FuturePool_ESTest.java) was generated with frame level=2
+The emtpy test [HalfBody_ESTest.java](generatedTest/org/objectweb/proactive/core/body/HalfBody_ESTest.java) was generated with frame level=4 and the emtpy test [FuturePool_ESTest.java](generatedTest/org/objectweb/proactive/core/body/future/FuturePool_ESTest.java) was generated with frame level=2.
+The execution logs can be found in the file [illegalStateExceptionResult.txt](illegalStateExceptionResult.txt).
