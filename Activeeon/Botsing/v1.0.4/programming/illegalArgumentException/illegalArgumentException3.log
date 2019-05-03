@@ -1,4 +1,3 @@
-Caused by: org.objectweb.proactive.core.mop.MethodCallExecutionFailedException: Arguments for the method readDefaultInputFile are invalids: java.lang.IllegalArgumentException: object is not an instance of declaring classfor the object functionalTests.dataspaces.TestDataSpaces$TestActiveObject@efdffa0(functionalTests.dataspaces.TestDataSpaces$TestActiveObject); nested exception is: 
 java.lang.IllegalArgumentException: object is not an instance of declaring class
     at org.objectweb.proactive.core.mop.MethodCall.execute(MethodCall.java:359)
     at org.objectweb.proactive.core.body.request.RequestImpl.serveInternal(RequestImpl.java:214)

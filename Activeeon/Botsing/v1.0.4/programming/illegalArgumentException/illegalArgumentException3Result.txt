@@ -1,0 +1,129 @@
+Initialized native services in: /home/mael/.gradle/native
+Removing 0 daemon stop events from registry
+Starting a Gradle Daemon (subsequent builds will be faster)
+Starting process 'Gradle build daemon'. Working directory: /home/mael/.gradle/daemon/4.10.2 Command: /usr/lib/jvm/java-8-oracle/bin/java -XX:+HeapDumpOnOutOfMemoryError -Xmx1024m -Dfile.encoding=UTF-8 -Duser.country=FR -Duser.language=fr -Duser.variant -cp /home/mael/.gradle/wrapper/dists/gradle-4.10.2-bin/cghg6c4gf4vkiutgsab8yrnwv/gradle-4.10.2/lib/gradle-launcher-4.10.2.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 4.10.2
+Successfully started process 'Gradle build daemon'
+An attempt to start the daemon took 0.714 secs.
+The client will now receive all logging from the daemon (pid: 26748). The daemon log file: /home/mael/.gradle/daemon/4.10.2/daemon-26748.out.log
+Starting build in new daemon [memory: 954,7 MB]
+Using 8 worker leases.
+Starting Build
+Settings evaluated using settings file '/home/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.4/programming/settings.gradle'.
+Projects loaded. Root project using build file '/home/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.4/programming/build.gradle'.
+Included projects: [root project 'programming']
+
+> Configure project :
+Evaluating root project 'programming' using build file '/home/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.4/programming/build.gradle'.
+Compiling build file '/home/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.4/programming/build.gradle' using SubsetScriptTransformer.
+Compiling build file '/home/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.4/programming/build.gradle' using BuildScriptTransformer.
+All projects evaluated.
+Selected primary task 'botsing' from project :
+Tasks to be executed: [task ':botsing']
+:botsing (Thread[Task worker for ':' Thread 6,5,main]) started.
+10:19:38.009 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.IllegalArgumentException
+10:19:38.013 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.objectweb.proactive.core.body.request.RequestImpl.serveInternal(RequestImpl:214)
+10:19:38.013 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.objectweb.proactive.core.body.request.RequestImpl
+10:19:38.662 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 24.
+
+> Task :botsing
+Task ':botsing' is not up-to-date because:
+  Task has not declared any outputs despite executing actions.
+The following parameters will be used: 
+- logPath: /home/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.4/programming/illegalArgumentException/illegalArgumentException3.log
+- targetFrame: 2
+- output: illegalArgumentException/
+- searchBudget: 60
+- botsingVersion: 1.0.4
+- mavenArtifacts: [
+        org.objectweb.proactive:programming-core:8.4.0,
+        org.objectweb.proactive:programming-extension-pamr:8.4.0,
+        org.objectweb.proactive:programming-extension-pnp:8.4.0,
+        org.objectweb.proactive:programming-extension-pnpssl:8.4.0]
+Running Botsing with target frame=2.
+
+log4j:ERROR A "org.apache.log4j.ConsoleAppender" object is not assignable to a "org.apache.log4j.Appender" variable.
+log4j:ERROR The class "org.apache.log4j.Appender" was loaded by 
+log4j:ERROR [org.evosuite.instrumentation.InstrumentingClassLoader@5606ac94] whereas object of type 
+log4j:ERROR "org.apache.log4j.ConsoleAppender" was loaded by [sun.misc.Launcher$AppClassLoader@70dea4e].
+log4j:ERROR Could not instantiate appender named "CONSOLE".
+10:19:41.653 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+10:19:41.657 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+10:19:41.658 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The single goal is crash coverage.
+10:19:41.663 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+10:19:41.663 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+10:19:41.663 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+10:19:41.663 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+10:19:41.663 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is serveInternal
+10:19:41.667 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 100 individuals
+10:19:46.489 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 3.0
+10:19:46.489 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. PT: 4 seconds
+10:19:46.489 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+10:19:46.493 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+10:19:46.493 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+10:19:46.493 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+10:19:46.493 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+10:19:46.493 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is serveInternal
+10:19:46.494 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Detecting the target method call(s) ...
+10:19:46.494 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target method is public!
+10:19:46.494 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - The target is a method!
+10:19:46.494 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Botsing found 1 Target call(s):
+10:19:46.494 [main] INFO  e.s.b.g.s.o.GuidedSearchUtility - Target method #1 is serveInternal
+10:19:48.118 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 200
+10:19:49.087 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 300
+10:19:49.898 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 400
+10:19:50.992 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 500
+10:19:50.993 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.6. PT: 9 seconds
+10:19:51.686 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 600
+10:19:52.371 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 700
+Exception in thread "Monitoring the Futures" org.evosuite.testcase.execution.TestCaseExecutor$TimeoutExceeded
+        at org.evosuite.testcase.execution.ExecutionTracer.checkTimeout(ExecutionTracer.java:387)
+        at org.objectweb.proactive.core.body.future.FutureMonitoring.monitoringDelay(FutureMonitoring.java:86)
+        at org.objectweb.proactive.core.body.future.FutureMonitoring.run(FutureMonitoring.java:167)
+        at java.lang.Thread.run(Thread.java:748)
+10:19:53.300 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 800
+10:19:53.990 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 900
+10:19:54.695 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 1000
+10:19:56.021 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 1100
+10:19:56.760 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 1200
+10:19:57.532 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 1300
+10:19:58.226 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 1400
+10:19:58.954 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 1500
+10:19:59.720 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 1600
+10:20:00.462 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 1700
+10:20:01.282 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 1800
+10:20:02.187 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 1900
+10:20:03.097 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 2000
+10:20:03.961 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 2100
+10:20:04.851 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 2200
+10:20:05.853 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 2300
+10:20:11.745 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 2400
+10:20:17.679 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 2500
+10:20:18.593 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 2600
+10:20:19.614 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 2700
+10:20:20.598 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 2800
+10:20:21.383 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 2900
+10:20:22.195 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 3000
+10:20:23.011 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 3100
+10:20:23.801 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 3200
+10:20:24.828 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 3300
+10:20:25.642 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 3400
+10:20:26.419 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 3500
+10:20:27.237 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 3600
+10:20:28.006 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 3700
+10:20:28.844 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 3800
+10:20:29.676 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 3900
+10:20:35.513 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 4000
+10:20:41.263 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 4100
+10:20:42.033 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 4200
+10:20:42.823 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 0.6 | 4300
+10:20:42.823 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - MaxTime :                         61 / 60           Finished!
+10:20:42.823 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+10:20:42.823 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.6. PT: 9 seconds
+10:20:42.823 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is not covered! The best solution has 0.6 fitness value.
+10:20:42.824 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The best test is:(non-minimized version:
+)
+10:20:42.827 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+10:20:42.829 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+10:20:42.834 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'RequestImpl_ESTest' to illegalArgumentException
+10:20:42.845 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
+:botsing (Thread[Task worker for ':' Thread 6,5,main]) completed. Took 1 mins 5.452 secs.

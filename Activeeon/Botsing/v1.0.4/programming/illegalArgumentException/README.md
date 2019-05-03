@@ -39,15 +39,4 @@ Botsing was unable to generate test with this log.
 
 ### Execution on illegalArgumentException3.log
 
-Unable to execute Botsing on the third log. An exception occurs preventing to get results with target frame from 1 to 3.
-```
-17:19:56.974 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: Caused by
-Exception in thread "main" java.lang.StringIndexOutOfBoundsException: String index out of range: -1
-	at java.lang.String.substring(String.java:1927)
-	at eu.stamp.botsing.StackTrace.stringToStackTraceElement(StackTrace.java:102)
-	at eu.stamp.botsing.StackTrace.setup(StackTrace.java:74)
-	at eu.stamp.botsing.CrashProperties.setupStackTrace(CrashProperties.java:190)
-	at eu.stamp.botsing.Botsing.setupStackTrace(Botsing.java:127)
-	at eu.stamp.botsing.Botsing.parseCommandLine(Botsing.java:64)
-	at eu.stamp.botsing.Botsing.main(Botsing.java:163)
-```
+The test [RequestImpl_ESTest2.java](generatedTest/org/objectweb/proactive/core/body/request/RequestImpl_ESTest2.java) was generated with frame level=2. The execution result is available in the file [illegalArgumentException3Result.txt](illegalArgumentException3Result.txt)
