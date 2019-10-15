@@ -1,0 +1,89 @@
+14:18:11.545 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: ch.qos.logback.core.joran.spi.JoranException
+14:18:11.545 [main] WARN  eu.stamp.botsing.StackTrace - Missing line in frame 6
+14:18:11.545 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: no.tellu.cloud.mediator.ServiceComponent.<init>(ServiceComponent:83)
+14:18:11.545 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: no.tellu.cloud.mediator.ServiceComponent
+14:18:13.127 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+14:18:25.227 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+14:18:25.243 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+14:18:25.258 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 50 individuals
+14:18:25.996 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 4.5
+14:18:25.996 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 4.5. PT: 0 seconds
+14:18:25.996 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+14:18:26.607 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 100
+14:18:27.044 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 4.5 | 150
+Exception in thread "RabbitMQ-reconnect" org.evosuite.testcase.execution.TestCaseExecutor$TimeoutExceeded
+        at org.evosuite.testcase.execution.ExecutionTracer.checkTimeout(ExecutionTracer.java:387)
+        at no.tellu.cloud.mediator.rabbitmq.RabbitMQMediator$Reconnect.run(RabbitMQMediator.java:129)
+Exception in thread "RabbitMQ-reconnect" org.evosuite.testcase.execution.TestCaseExecutor$TimeoutExceeded
+        at org.evosuite.testcase.execution.ExecutionTracer.checkTimeout(ExecutionTracer.java:387)
+        at no.tellu.cloud.mediator.rabbitmq.RabbitMQMediator$Reconnect.run(RabbitMQMediator.java:129)
+Exception in thread "RabbitMQ-reconnect" org.evosuite.testcase.execution.TestCaseExecutor$TimeoutExceeded
+        at org.evosuite.testcase.execution.ExecutionTracer.checkTimeout(ExecutionTracer.java:387)
+        at no.tellu.cloud.mediator.rabbitmq.RabbitMQMediator$Reconnect.run(RabbitMQMediator.java:129)
+Exception in thread "RabbitMQ-reconnect" org.evosuite.testcase.execution.TestCaseExecutor$TimeoutExceeded
+        at org.evosuite.testcase.execution.ExecutionTracer.checkTimeout(ExecutionTracer.java:387)
+        at no.tellu.cloud.mediator.rabbitmq.RabbitMQMediator$Reconnect.run(RabbitMQMediator.java:129)
+Exception in thread "RabbitMQ-reconnect" org.evosuite.testcase.execution.TestCaseExecutor$TimeoutExceeded
+        at org.evosuite.testcase.execution.ExecutionTracer.checkTimeout(ExecutionTracer.java:387)
+        at no.tellu.cloud.mediator.rabbitmq.RabbitMQMediator$Reconnect.run(RabbitMQMediator.java:129)
+Exception in thread "RabbitMQ-reconnect" org.evosuite.testcase.execution.TestCaseExecutor$TimeoutExceeded
+        at org.evosuite.testcase.execution.ExecutionTracer.checkTimeout(ExecutionTracer.java:387)
+        at no.tellu.cloud.mediator.rabbitmq.RabbitMQMediator$Reconnect.run(RabbitMQMediator.java:129)
+Exception in thread "RabbitMQ-reconnect" org.evosuite.testcase.execution.TestCaseExecutor$TimeoutExceeded
+        at org.evosuite.testcase.execution.ExecutionTracer.checkTimeout(ExecutionTracer.java:387)
+        at no.tellu.cloud.mediator.rabbitmq.RabbitMQMediator$Reconnect.run(RabbitMQMediator.java:129)
+2019-10-15T12:35:36.504+0000    FastClasspathScanner    java.sql.SQLInvalidAuthorizationSpecException: write a number
+2019-10-15T12:35:36.504+0000    FastClasspathScanner            at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+2019-10-15T12:35:36.504+0000    FastClasspathScanner            at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+2019-10-15T12:35:36.504+0000    FastClasspathScanner            at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+2019-10-15T12:35:36.504+0000    FastClasspathScanner            at java.lang.reflect.Constructor.newInstance(Unknown Source)
+2019-10-15T12:35:36.504+0000    FastClasspathScanner            at org.evosuite.testcase.statements.ConstructorStatement$1.execute(ConstructorStatement.java:233)
+2019-10-15T12:35:36.504+0000    FastClasspathScanner            at org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+2019-10-15T12:35:36.504+0000    FastClasspathScanner            at org.evosuite.testcase.statements.ConstructorStatement.execute(ConstructorStatement.java:188)
+2019-10-15T12:35:36.504+0000    FastClasspathScanner            at org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+2019-10-15T12:35:36.504+0000    FastClasspathScanner            at org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+2019-10-15T12:35:36.504+0000    FastClasspathScanner            at org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+2019-10-15T12:35:36.504+0000    FastClasspathScanner            at java.util.concurrent.FutureTask.run(Unknown Source)
+2019-10-15T12:35:36.504+0000    FastClasspathScanner            at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+2019-10-15T12:35:36.504+0000    FastClasspathScanner            at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+2019-10-15T12:35:36.504+0000    FastClasspathScanner            at java.lang.Thread.run(Unknown Source)
+2019-10-15T12:35:36.504+0000    FastClasspathScanner    Whitelisted relative path prefixes:  []
+2019-10-15T12:35:36.504+0000    FastClasspathScanner    Blacklisted relative path prefixes:  [sun/, javax/, java/]
+2019-10-15T12:35:36.504+0000    FastClasspathScanner    Specifically-whitelisted classfiles: [com/fasterxml/jackson/core/util/Separators.class]
+2019-10-15T12:35:36.505+0000    FastClasspathScanner    Finding classpath entries
+2019-10-15T12:35:36.505+0000    FastClasspathScanner    -- Getting raw classpath elements
+2019-10-15T12:35:36.505+0000    FastClasspathScanner    ---- Finding ClassLoaders
+2019-10-15T12:35:36.505+0000    FastClasspathScanner    ------ Found ClassLoaders:
+2019-10-15T12:35:36.505+0000    FastClasspathScanner    -------- org.evosuite.instrumentation.InstrumentingClassLoader@47b0663c
+2019-10-15T12:35:36.505+0000    FastClasspathScanner    ------ ClassLoaderHandlers:
+2019-10-15T12:35:36.505+0000    FastClasspathScanner    -------- io.github.lukehutch.fastclasspathscanner.classloaderhandler.EquinoxClassLoaderHandler
+2019-10-15T12:35:36.505+0000    FastClasspathScanner    -------- io.github.lukehutch.fastclasspathscanner.classloaderhandler.FelixClassLoaderHandler
+2019-10-15T12:35:36.505+0000    FastClasspathScanner    -------- io.github.lukehutch.fastclasspathscanner.classloaderhandler.JBossClassLoaderHandler
+2019-10-15T12:35:36.505+0000    FastClasspathScanner    -------- io.github.lukehutch.fastclasspathscanner.classloaderhandler.WeblogicClassLoaderHandler
+2019-10-15T12:35:36.505+0000    FastClasspathScanner    -------- io.github.lukehutch.fastclasspathscanner.classloaderhandler.WebsphereLibertyClassLoaderHandler
+2019-10-15T12:35:36.505+0000    FastClasspathScanner    -------- io.github.lukehutch.fastclasspathscanner.classloaderhandler.WebsphereTraditionalClassLoaderHandler
+2019-10-15T12:35:36.505+0000    FastClasspathScanner    -------- io.github.lukehutch.fastclasspathscanner.classloaderhandler.OSGiDefaultClassLoaderHandler
+2019-10-15T12:35:36.505+0000    FastClasspathScanner    -------- io.github.lukehutch.fastclasspathscanner.classloaderhandler.Java9ClassLoaderHandler
+2019-10-15T12:35:36.505+0000    FastClasspathScanner    -------- io.github.lukehutch.fastclasspathscanner.classloaderhandler.URLClassLoaderHandler
+2019-10-15T12:35:36.505+0000    FastClasspathScanner    ------ Could not find a ClassLoaderHandler that can handle org.evosuite.instrumentation.InstrumentingClassLoader@47b0663c -- please report this at https://github.com/lukehutch/fast-classpath-scanner/issues
+2019-10-15T12:35:36.505+0000    FastClasspathScanner    ------ Getting classpath entries from java.class.path
+2019-10-15T12:35:36.505+0000    FastClasspathScanner    -------- Found classpath element: F:\Dev\tellu-github\filterstore\botsing-reproduction-1.0.7.jar
+2019-10-15T12:35:36.505+0000    FastClasspathScanner    -- Searching for "Class-Path:" entries within manifest files
+2019-10-15T12:35:44.275+0000    FastClasspathScanner    Exception thrown
+2019-10-15T12:35:44.284+0000    FastClasspathScanner    -- java.lang.ThreadDeath
+2019-10-15T12:35:44.284+0000    FastClasspathScanner    --      at java.lang.Thread.stop(Unknown Source)
+2019-10-15T12:35:44.284+0000    FastClasspathScanner    --      at org.evosuite.testcase.execution.TestCaseExecutor.execute(TestCaseExecutor.java:460)
+2019-10-15T12:35:44.284+0000    FastClasspathScanner    --      at org.evosuite.testcase.execution.TestCaseExecutor.execute(TestCaseExecutor.java:277)
+2019-10-15T12:35:44.284+0000    FastClasspathScanner    --      at org.evosuite.testcase.execution.TestCaseExecutor.execute(TestCaseExecutor.java:264)
+2019-10-15T12:35:44.284+0000    FastClasspathScanner    --      at org.evosuite.testcase.execution.TestCaseExecutor.runTest(TestCaseExecutor.java:140)
+2019-10-15T12:35:44.284+0000    FastClasspathScanner    --      at org.evosuite.testcase.TestFitnessFunction.runTest(TestFitnessFunction.java:91)
+2019-10-15T12:35:44.284+0000    FastClasspathScanner    --      at org.evosuite.testcase.TestFitnessFunction.getFitness(TestFitnessFunction.java:60)
+2019-10-15T12:35:44.284+0000    FastClasspathScanner    --      at org.evosuite.testcase.TestFitnessFunction.getFitness(TestFitnessFunction.java:34)
+2019-10-15T12:35:44.284+0000    FastClasspathScanner    --      at eu.stamp.botsing.ga.strategy.GuidedGeneticAlgorithm.calculateFitness(GuidedGeneticAlgorithm.java:261)
+2019-10-15T12:35:44.284+0000    FastClasspathScanner    --      at eu.stamp.botsing.ga.strategy.GuidedGeneticAlgorithm.evolve(GuidedGeneticAlgorithm.java:167)
+2019-10-15T12:35:44.284+0000    FastClasspathScanner    --      at eu.stamp.botsing.ga.strategy.GuidedGeneticAlgorithm.generateSolution(GuidedGeneticAlgorithm.java:102)
+2019-10-15T12:35:44.284+0000    FastClasspathScanner    --      at eu.stamp.botsing.testgeneration.strategy.BotsingIndividualStrategy.generateTests(BotsingIndividualStrategy.java:105)
+2019-10-15T12:35:44.284+0000    FastClasspathScanner    --      at eu.stamp.botsing.reproduction.CrashReproduction.generateCrashReproductionTests(CrashReproduction.java:123)
+2019-10-15T12:35:44.284+0000    FastClasspathScanner    --      at eu.stamp.botsing.reproduction.CrashReproduction.execute(CrashReproduction.java:72)
+2019-10-15T12:35:44.284+0000    FastClasspathScanner    --      at eu.stamp.botsing.Botsing.parseCommandLine(Botsing.java:91)
+2019-10-15T12:35:44.284+0000    FastClasspathScanner    --      at eu.stamp.botsing.Botsing.main(Botsing.java:213)

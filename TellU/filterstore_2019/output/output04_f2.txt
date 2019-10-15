@@ -1,0 +1,29 @@
+14:44:24.764 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: ch.qos.logback.core.joran.spi.JoranException
+14:44:24.779 [main] WARN  eu.stamp.botsing.StackTrace - Missing line in frame 6
+14:44:24.779 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: no.tellu.cloud.mediator.ServiceComponent.configureLogger(ServiceComponent:235)
+14:44:24.779 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: no.tellu.cloud.mediator.ServiceComponent
+14:44:25.670 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+14:44:37.847 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+14:44:37.847 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+14:44:37.862 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 50 individuals
+14:44:38.690 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 5.9655172413793105
+14:44:38.690 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.9655172413793105. PT: 0 seconds
+14:44:38.690 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+Exception in thread "RabbitMQ-reconnect" org.evosuite.testcase.execution.TestCaseExecutor$TimeoutExceeded
+        at org.evosuite.testcase.execution.ExecutionTracer.checkTimeout(ExecutionTracer.java:387)
+        at no.tellu.cloud.mediator.rabbitmq.RabbitMQMediator$Reconnect.run(RabbitMQMediator.java:129)
+Exception in thread "RabbitMQ-reconnect" org.evosuite.testcase.execution.TestCaseExecutor$TimeoutExceeded
+        at org.evosuite.testcase.execution.ExecutionTracer.checkTimeout(ExecutionTracer.java:387)
+        at no.tellu.cloud.mediator.rabbitmq.RabbitMQMediator$Reconnect.run(RabbitMQMediator.java:129)
+Exception in thread "RabbitMQ-reconnect" org.evosuite.testcase.execution.TestCaseExecutor$TimeoutExceeded
+        at org.evosuite.testcase.execution.ExecutionTracer.checkTimeout(ExecutionTracer.java:387)
+        at no.tellu.cloud.mediator.rabbitmq.RabbitMQMediator$Reconnect.run(RabbitMQMediator.java:129)
+Exception in thread "RabbitMQ-reconnect" org.evosuite.testcase.execution.TestCaseExecutor$TimeoutExceeded
+        at org.evosuite.testcase.execution.ExecutionTracer.checkTimeout(ExecutionTracer.java:387)
+        at no.tellu.cloud.mediator.rabbitmq.RabbitMQMediator$Reconnect.run(RabbitMQMediator.java:129)
+Exception in thread "RabbitMQ-reconnect" org.evosuite.testcase.execution.TestCaseExecutor$TimeoutExceeded
+        at org.evosuite.testcase.execution.ExecutionTracer.checkTimeout(ExecutionTracer.java:387)
+        at no.tellu.cloud.mediator.rabbitmq.RabbitMQMediator$Reconnect.run(RabbitMQMediator.java:129)
+Exception in thread "RabbitMQ-reconnect" org.evosuite.testcase.execution.TestCaseExecutor$TimeoutExceeded
+        at org.evosuite.testcase.execution.ExecutionTracer.checkTimeout(ExecutionTracer.java:387)
+        at no.tellu.cloud.mediator.rabbitmq.RabbitMQMediator$Reconnect.run(RabbitMQMediator.java:128)
