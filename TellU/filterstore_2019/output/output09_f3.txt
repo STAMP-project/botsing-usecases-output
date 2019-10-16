@@ -1,0 +1,83 @@
+13:52:21.126 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: java.lang.NullPointerException
+13:52:21.130 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: no.tellu.findit.domain.PositionImpl.setInsideZonesFull(PositionImpl:488)
+13:52:21.130 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: no.tellu.findit.domain.PositionImpl
+13:52:22.209 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 2.
+13:52:29.307 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+13:52:29.322 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+13:52:29.338 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 50 individuals
+13:52:30.987 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 0.0
+13:52:30.988 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. PT: 1 seconds
+13:52:30.988 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+13:52:30.988 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - ZeroFitness :                      0 / 0            Finished!
+13:52:30.989 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+13:52:30.989 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 0.0. PT: 1 seconds
+13:52:30.991 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is covered. The generated test is: PositionImpl positionImpl0 = new PositionImpl();
+Date date0 = null;
+positionImpl0.setLocationTimeStamp(date0);
+HashMap<Long, Map<String, Object>> hashMap0 = new HashMap<Long, Map<String, Object>>();
+positionImpl0.setInsideZonesFull(hashMap0);
+positionImpl0.getY();
+String string0 = "0^F9p/";
+positionImpl0.setOriginalMessage(string0);
+Long long0 = positionImpl0.getVersion();
+RuleImpl ruleImpl0 = new RuleImpl();
+Long long1 = ruleImpl0.getVersion();
+boolean boolean0 = false;
+BaseAccount baseAccount0 = new BaseAccount();
+Long long2 = baseAccount0.getId();
+SensorDeviceConfigurationImpl sensorDeviceConfigurationImpl0 = new SensorDeviceConfigurationImpl();
+Long long3 = sensorDeviceConfigurationImpl0.getId();
+long long4 = 0L;
+Long long5 = new Long(long4);
+Long long6 = ruleImpl0.getVersion();
+SensorDeviceImpl sensorDeviceImpl0 = new SensorDeviceImpl(long0, long1, boolean0, long2, long3, long5, long6);
+Map<String, String> map0 = sensorDeviceImpl0.getNextTimeoutPerFilter();
+positionImpl0.setPermanentProperties(map0);
+positionImpl0.setSource(map0);
+positionImpl0.getFloor();
+positionImpl0.setInsideZonesFullString(string0);
+double double0 = 0.0;
+Double double1 = new Double(double0);
+positionImpl0.setAccuracy(double1);
+positionImpl0.setInsideZonesFullString(string0);
+positionImpl0.getMd5();
+Long long7 = positionImpl0.getVersion();
+positionImpl0.getZ();
+positionImpl0.getReceptionTimeStamp();
+PositionImpl.__STATIC_RESET();
+String string1 = null;
+String[] stringArray0 = new String[3];
+stringArray0[0] = string0;
+stringArray0[1] = string0;
+stringArray0[2] = string1;
+positionImpl0.setSource(string1, long7, string0, string0, stringArray0);
+
+13:52:30.991 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - 1 thrown exception(s) are detected in the solution:
+13:52:30.992 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.NullPointerException
+13:52:30.992 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - no.tellu.findit.util.ListToStringUtil.serialize(ListToStringUtil.java:63)
+13:52:30.993 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - no.tellu.findit.domain.PositionImpl.setInsideZones(PositionImpl.java:376)
+13:52:30.993 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - no.tellu.findit.domain.PositionImpl.setInsideZonesFull(PositionImpl.java:488)
+13:52:30.994 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+13:52:30.994 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+13:52:30.995 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+13:52:30.995 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.reflect.Method.invoke(Unknown Source)
+13:52:30.996 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+13:52:30.996 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+13:52:30.997 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+13:52:31.004 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+13:52:31.004 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+13:52:31.007 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+13:52:31.008 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.FutureTask.run(Unknown Source)
+13:52:31.008 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+13:52:31.009 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+13:52:31.009 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - java.lang.Thread.run(Unknown Source)
+13:52:31.016 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+13:52:31.078 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+13:52:31.078 [main] ERROR e.s.b.reproduction.CrashReproduction - No Java compiler is available. Make sure to run EvoSuite with the JDK and not the JRE.You can try to setup the JAVA_HOME system variable to point to it, as well as to make sure that the PATH variable points to the JDK before any JRE.
+Exception in thread "main" java.lang.RuntimeException: No Java compiler is available. Make sure to run EvoSuite with the JDK and not the JRE.You can try to setup the JAVA_HOME system variable to point to it, as well as to make sure that the PATH variable points to the JDK before any JRE.
+        at eu.stamp.botsing.reproduction.CrashReproduction.compileAndCheckTests(CrashReproduction.java:223)
+        at eu.stamp.botsing.reproduction.CrashReproduction.postProcessTests(CrashReproduction.java:181)
+        at eu.stamp.botsing.reproduction.CrashReproduction.generateCrashReproductionTests(CrashReproduction.java:125)
+        at eu.stamp.botsing.reproduction.CrashReproduction.execute(CrashReproduction.java:72)
+        at eu.stamp.botsing.Botsing.parseCommandLine(Botsing.java:91)
+        at eu.stamp.botsing.Botsing.main(Botsing.java:213)

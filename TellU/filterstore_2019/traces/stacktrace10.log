@@ -1,0 +1,6 @@
+java.lang.NullPointerException:
+	at no.tellu.cloud.filterstore.ObservationEncoder.create(ObservationEncoder.java:50)
+	at no.tellu.cloud.filterstore.ObservationEncoder.create(ObservationEncoder.java:62)
+	at no.tellu.cloud.filterstore.ObservationHandler.handleData(ObservationHandler.java:192)
+	at no.tellu.cloud.filterstore.ObservationHandler.handleData(ObservationHandler.java:112)
+	at no.tellu.cloud.filterstore.FilterStoreService.onMessage(FilterStoreService.java:173)

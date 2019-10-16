@@ -70,17 +70,29 @@ no.tellu.findit.cmd.hibernate.CommandHandlerImpl line 29: Return null for DAOFac
 * Frame 3: Not recreated, 30 minutes.
 
 ## Exception 07
-java -jar botsing-reproduction-1.0.7.jar -crash_log stacktrace07.log -project_cp ./cp -target_frame 3
+no.tellu.findit.domain.AssetImpl line 328: Remove object instatiation, creating null-pointer. Using root cause exception trace.
+* Frame 2: Not recreated, 30 minutes. It is targeting a complex method, where a lot of conditions must be met.
+* Frame 3: Not recreated, 30 minutes.
 
-no.tellu.findit.domain.AssetImpl line 245: Return null
+## Exception 08
+no.tellu.findit.services.AddressLookupServiceImpl line 176: Throw NullPointerException. Application runs but logs the exception.
+* Frame 2: Not recreated, 30 minutes.
 
+## Exception 09
+no.tellu.findit.util.ListToStringUtil line 63: Throw NullPointerException instead of returning serialized strings.
+* Frame 2: Recreated, 1 second. Test includes EvoSuite class, still works correctly after removing this.
+* Frame 3: Recreated, 1 second. Test includes a statement "PositionImpl.__STATIC_RESET()", this method does not exist. Test works correctly after removing this line.
+* Frame 4: Recreated, 86 seconds.
 
-no.tellu.findit.services.AddressLookupService line 176: Throw NullPointerException
+## Exception 10
+no.tellu.cloud.filterstore.ObservationEncoder line 49: Removed null-check.
+* Frame 3: Not recreated, 30 minutes.
 
-no.tellu.findit.util.ListToStringUtil line 62: Throw NullPointerException
+## Exception 11
+no.tellu.cloud.filterstore.CircularPositionBuffer line 50: Error in Hibernate query string. This is passed to the Hibernate persistence layer, propagating Exceptions up through the layers of ourr app. We use the root cause exception trace, which involves many frames of Hibernate code. Tellu code starts on frame 17.
+* Frame 18 (2nd of Tellu code): Not recreated, 30 minutes. The path to the exception is simple, but it propably depends on running in a context where Hibernate is correctly set up.
+* Frame 19 (3rd of Tellu code): Not recreated, 30 minutes.
 
-no.tellu.cloud.filterstore.ObservationEncoder line 49: Remove null-check
-
-no.tellu.cloud.filterstore.CircularPositionBuffer line 50: Error in Hibernate query string
-
+## Exception 12
 no.tellu.cloud.filterstore.cmd.UpdateSensorPositionCmd line 475: Error in Hibernate query string
+* Frame 4 (2nd of Tellu code): Not recreated, 30 minutes.

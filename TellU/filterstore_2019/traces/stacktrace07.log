@@ -1,0 +1,7 @@
+java.lang.NullPointerException:
+	at no.tellu.findit.domain.AssetImpl.setInsideZonesFull(AssetImpl.java:344)
+	at no.tellu.cloud.filterstore.cmd.UpdateSensorPositionCmd.updateAsset(UpdateSensorPositionCmd.java:471)
+	at no.tellu.cloud.filterstore.cmd.UpdateSensorPositionCmd.handleAsset(UpdateSensorPositionCmd.java:390)
+	at no.tellu.cloud.filterstore.cmd.UpdateSensorPositionCmd.handleDevice(UpdateSensorPositionCmd.java:289)
+	at no.tellu.cloud.filterstore.cmd.UpdateSensorPositionCmd.execute(UpdateSensorPositionCmd.java:86)
+	at no.tellu.findit.cmd.hibernate.CommandHandlerImpl.executeCommand(CommandHandlerImpl.java:59)

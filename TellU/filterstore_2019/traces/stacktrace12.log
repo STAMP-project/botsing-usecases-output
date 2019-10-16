@@ -1,0 +1,8 @@
+java.lang.IllegalArgumentException:
+	at org.hibernate.impl.AbstractQueryImpl.setParameter(AbstractQueryImpl.java:380)
+	at org.hibernate.impl.AbstractQueryImpl.setLong(AbstractQueryImpl.java:652)
+	at no.tellu.cloud.filterstore.cmd.UpdateSensorPositionCmd.updateAsset(UpdateSensorPositionCmd.java:541)
+	at no.tellu.cloud.filterstore.cmd.UpdateSensorPositionCmd.handleAsset(UpdateSensorPositionCmd.java:390)
+	at no.tellu.cloud.filterstore.cmd.UpdateSensorPositionCmd.handleDevice(UpdateSensorPositionCmd.java:289)
+	at no.tellu.cloud.filterstore.cmd.UpdateSensorPositionCmd.execute(UpdateSensorPositionCmd.java:86)
+	at no.tellu.findit.cmd.hibernate.CommandHandlerImpl.executeCommand(CommandHandlerImpl.java:59)
