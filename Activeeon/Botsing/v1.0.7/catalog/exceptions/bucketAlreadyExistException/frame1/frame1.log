@@ -1,0 +1,13 @@
+Initialized native services in: /home/mael/.gradle/native
+The client will now receive all logging from the daemon (pid: 24663). The daemon log file: /home/mael/.gradle/daemon/4.10.2/daemon-24663.out.log
+Starting 4th build in daemon [uptime: 3 mins 48.921 secs, performance: 81%]
+Using 8 worker leases.
+Starting Build
+Settings evaluated using settings file '/media/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.7/catalog/settings.gradle'.
+Projects loaded. Root project using build file '/media/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.7/catalog/build.gradle'.
+Included projects: [root project 'catalog']
+
+> Configure project :
+Evaluating root project 'catalog' using build file '/media/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.7/catalog/build.gradle'.
+Compiling build file '/media/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.7/catalog/build.gradle' using SubsetScriptTransformer.
+Compiling build file '/media/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.7/catalog/build.gradle' using BuildScriptTransformer.

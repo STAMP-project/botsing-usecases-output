@@ -1,0 +1,79 @@
+Initialized native services in: /home/mael/.gradle/native
+Removing 0 daemon stop events from registry
+Starting a Gradle Daemon (subsequent builds will be faster)
+Starting process 'Gradle build daemon'. Working directory: /home/mael/.gradle/daemon/4.10.2 Command: /usr/lib/jvm/java-8-openjdk-amd64/bin/java -XX:+HeapDumpOnOutOfMemoryError -Xmx1024m -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -cp /home/mael/.gradle/wrapper/dists/gradle-4.10.2-bin/cghg6c4gf4vkiutgsab8yrnwv/gradle-4.10.2/lib/gradle-launcher-4.10.2.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 4.10.2
+Successfully started process 'Gradle build daemon'
+An attempt to start the daemon took 0.688 secs.
+The client will now receive all logging from the daemon (pid: 25995). The daemon log file: /home/mael/.gradle/daemon/4.10.2/daemon-25995.out.log
+Starting build in new daemon [memory: 954.7 MB]
+Using 8 worker leases.
+Starting Build
+Settings evaluated using settings file '/media/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.7/catalog/settings.gradle'.
+Projects loaded. Root project using build file '/media/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.7/catalog/build.gradle'.
+Included projects: [root project 'catalog']
+
+> Configure project :
+Evaluating root project 'catalog' using build file '/media/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.7/catalog/build.gradle'.
+Compiling build file '/media/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.7/catalog/build.gradle' using SubsetScriptTransformer.
+Compiling build file '/media/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.7/catalog/build.gradle' using BuildScriptTransformer.
+All projects evaluated.
+Selected primary task 'botsing' from project :
+Tasks to be executed: [task ':botsing']
+:botsing (Thread[Task worker for ':' Thread 6,5,main]) started.
+16:54:26.891 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: 2019-10-15 17
+16:54:26.894 [main] WARN  eu.stamp.botsing.StackTrace - Missing line in frame 3
+16:54:26.896 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: java.lang.reflect.Method.invoke(Method:498)
+16:54:26.896 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: java.lang.reflect.Method
+16:54:27.046 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 106.
+
+> Task :botsing
+Task ':botsing' is not up-to-date because:
+  Task has not declared any outputs despite executing actions.
+The following parameters will be used: 
+- logPath: /home/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.7/catalog/exceptions/accessDeniedException/AccessDeniedException.log
+- targetFrame: 6
+- output: .
+- searchBudget: 60
+- botsingVersion: 1.0.7
+- mavenArtifacts: [
+	org.ow2.proactive:catalog:8.3.5]
+Running Botsing with target frame=6.
+
+16:54:30.117 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+16:54:30.125 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+Exception in thread "main" java.lang.NullPointerException
+	at eu.stamp.botsing.ga.strategy.operators.GuidedSearchUtility.getTargetInstruction(GuidedSearchUtility.java:173)
+	at eu.stamp.botsing.ga.strategy.operators.GuidedSearchUtility.getPublicCalls(GuidedSearchUtility.java:77)
+	at eu.stamp.botsing.ga.strategy.operators.GuidedSearchUtility.getPublicCalls(GuidedSearchUtility.java:98)
+	at eu.stamp.botsing.ga.strategy.operators.GuidedSearchUtility.collectPublicCalls(GuidedSearchUtility.java:30)
+	at eu.stamp.botsing.fitnessfunction.testcase.factories.StackTraceChromosomeFactory.fillPublicCalls(StackTraceChromosomeFactory.java:206)
+	at eu.stamp.botsing.fitnessfunction.testcase.factories.StackTraceChromosomeFactory.<init>(StackTraceChromosomeFactory.java:70)
+	at eu.stamp.botsing.testgeneration.strategy.TestGenerationUtility.getChromosomeFactory(TestGenerationUtility.java:46)
+	at eu.stamp.botsing.testgeneration.strategy.TestGenerationUtility.getGA(TestGenerationUtility.java:26)
+	at eu.stamp.botsing.testgeneration.strategy.BotsingIndividualStrategy.generateTests(BotsingIndividualStrategy.java:61)
+	at eu.stamp.botsing.reproduction.CrashReproduction.generateCrashReproductionTests(CrashReproduction.java:123)
+	at eu.stamp.botsing.reproduction.CrashReproduction.execute(CrashReproduction.java:72)
+	at eu.stamp.botsing.Botsing.parseCommandLine(Botsing.java:91)
+	at eu.stamp.botsing.Botsing.main(Botsing.java:213)
+
+> Task :botsing
+Running Botsing with target frame=5.
+
+16:56:26.910 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: 2019-10-15 17
+16:56:26.912 [main] WARN  eu.stamp.botsing.StackTrace - Missing line in frame 3
+16:56:26.914 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl:43)
+16:56:26.914 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: sun.reflect.DelegatingMethodAccessorImpl
+16:56:27.071 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 106.
+16:56:29.608 [main] ERROR e.s.b.reproduction.CrashReproduction - Error in target initialization:
+java.lang.ClassNotFoundException: Target class not found in inheritance tree
+	at org.evosuite.setup.DependencyAnalysis.analyze(DependencyAnalysis.java:87)
+	at org.evosuite.setup.DependencyAnalysis.analyzeClass(DependencyAnalysis.java:132)
+	at eu.stamp.botsing.reproduction.CrashReproduction.initializeTargetClass(CrashReproduction.java:206)
+	at eu.stamp.botsing.reproduction.CrashReproduction.generateCrashReproductionTests(CrashReproduction.java:101)
+	at eu.stamp.botsing.reproduction.CrashReproduction.execute(CrashReproduction.java:72)
+	at eu.stamp.botsing.Botsing.parseCommandLine(Botsing.java:91)
+	at eu.stamp.botsing.Botsing.main(Botsing.java:213)
+:botsing (Thread[Task worker for ':' Thread 6,5,main]) completed. Took 2 mins 3.302 secs.
+
+BUILD SUCCESSFUL in 2m 6s
+1 actionable task: 1 executed

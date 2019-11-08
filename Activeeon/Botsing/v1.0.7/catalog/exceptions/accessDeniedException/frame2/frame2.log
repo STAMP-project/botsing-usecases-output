@@ -1,0 +1,85 @@
+Initialized native services in: /home/mael/.gradle/native
+The client will now receive all logging from the daemon (pid: 28151). The daemon log file: /home/mael/.gradle/daemon/4.10.2/daemon-28151.out.log
+Starting 4th build in daemon [uptime: 23 mins 19.666 secs, performance: 97%]
+Using 8 worker leases.
+Starting Build
+Settings evaluated using settings file '/media/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.7/catalog/settings.gradle'.
+Projects loaded. Root project using build file '/media/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.7/catalog/build.gradle'.
+Included projects: [root project 'catalog']
+
+> Configure project :
+Evaluating root project 'catalog' using build file '/media/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.7/catalog/build.gradle'.
+Compiling build file '/media/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.7/catalog/build.gradle' using SubsetScriptTransformer.
+Compiling build file '/media/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.7/catalog/build.gradle' using BuildScriptTransformer.
+All projects evaluated.
+Selected primary task 'botsing' from project :
+Tasks to be executed: [task ':botsing']
+:botsing (Thread[Task worker for ':',5,main]) started.
+17:54:12.054 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: 2019-10-15 17
+17:54:12.056 [main] WARN  eu.stamp.botsing.StackTrace - Missing line in frame 3
+17:54:12.059 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.ow2.proactive.catalog.rest.controller.BucketController.create(BucketController:89)
+17:54:12.059 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.ow2.proactive.catalog.rest.controller.BucketController
+java.lang.NoClassDefFoundError: org/springframework/dao/DataIntegrityViolationException
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:348)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:257)
+	at org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:169)
+	at org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:220)
+	at org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:307)
+	at org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:213)
+	at org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:55)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.ClassNotFoundException: Class 'org/springframework/dao/DataIntegrityViolationException.class' should be in target project, but could not be found!
+	at org.evosuite.instrumentation.InstrumentingClassLoader.instrumentClass(InstrumentingClassLoader.java:203)
+	at org.evosuite.instrumentation.InstrumentingClassLoader.loadClass(InstrumentingClassLoader.java:168)
+	... 16 more
+Caused by: java.lang.ClassNotFoundException: Class 'org/springframework/dao/DataIntegrityViolationException.class' should be in target project, but could not be found!
+	at org.evosuite.instrumentation.InstrumentingClassLoader.instrumentClass(InstrumentingClassLoader.java:190)
+	... 17 more
+17:54:12.327 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 1.
+17:54:13.361 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+17:54:13.368 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+17:54:13.380 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 50 individuals
+
+> Task :botsing
+Task ':botsing' is not up-to-date because:
+  Task has not declared any outputs despite executing actions.
+The following parameters will be used: 
+- logPath: /home/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.7/catalog/exceptions/accessDeniedException/AccessDeniedException.log
+- targetFrame: 2
+- output: .
+- searchBudget: 60
+- botsingVersion: 1.0.7
+- localArtifacts: [
+	/home/mael/activeeon/catalog/build/libs/catalog-8.3.4.jar]
+Running Botsing with target frame=2.
+
+17:54:15.402 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 5.857142857142857
+17:54:15.402 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.857142857142857. PT: 2 seconds
+17:54:15.402 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+17:54:15.403 [main] WARN  e.s.b.g.s.GuidedGeneticAlgorithm - Botsing was unsuccessful in generating new generation. cause: set of public calls is empty
+[...]
+17:55:14.377 [main] WARN  e.s.b.g.s.GuidedGeneticAlgorithm - Botsing was unsuccessful in generating new generation. cause: set of public calls is empty
+17:55:14.377 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - MaxTime :                         61 / 60           Finished!
+17:55:14.379 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.857142857142857 | 100
+17:55:14.379 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - MaxTime :                         61 / 60           Finished!
+17:55:14.379 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+17:55:14.379 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.857142857142857. PT: 2 seconds
+17:55:14.379 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is not covered! The best solution has 5.857142857142857 fitness value.
+17:55:14.380 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The best test is:(non-minimized version:
+)
+17:55:14.381 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+17:55:14.383 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+17:55:14.388 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'BucketController_ESTest' to .
+17:55:14.404 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
+:botsing (Thread[Task worker for ':',5,main]) completed. Took 1 mins 2.784 secs.
+
+BUILD SUCCESSFUL in 1m 3s
+1 actionable task: 1 executed

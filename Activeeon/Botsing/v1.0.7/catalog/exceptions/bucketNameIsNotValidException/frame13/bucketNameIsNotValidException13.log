@@ -1,0 +1,49 @@
+Initialized native services in: /home/mael/.gradle/native
+The client will now receive all logging from the daemon (pid: 20200). The daemon log file: /home/mael/.gradle/daemon/4.10.2/daemon-20200.out.log
+Starting 2nd build in daemon [uptime: 4 mins 44.448 secs, performance: 59%]
+Using 8 worker leases.
+Starting Build
+Settings evaluated using settings file '/media/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.7/catalog/settings.gradle'.
+Projects loaded. Root project using build file '/media/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.7/catalog/build.gradle'.
+Included projects: [root project 'catalog']
+
+> Configure project :
+Evaluating root project 'catalog' using build file '/media/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.7/catalog/build.gradle'.
+All projects evaluated.
+Selected primary task 'botsing' from project :
+Tasks to be executed: [task ':botsing']
+:botsing (Thread[Task worker for ':',5,main]) started.
+14:44:42.511 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: 2019-10-15 17
+14:44:42.513 [main] WARN  eu.stamp.botsing.StackTrace - Missing line in frame 2
+14:44:42.515 [main] WARN  eu.stamp.botsing.StackTrace - Missing line in frame 11
+14:44:42.515 [main] WARN  eu.stamp.botsing.StackTrace - Missing line in frame 13
+14:44:42.517 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: sun.reflect.NativeMethodAccessorImpl.invoke0(NativeMethodAccessorImpl)
+14:44:42.517 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: sun.reflect.NativeMethodAccessorImpl
+14:44:42.683 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 106.
+
+> Task :botsing
+Task ':botsing' is not up-to-date because:
+  Task has not declared any outputs despite executing actions.
+The following parameters will be used: 
+- logPath: /home/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.7/catalog/exceptions/bucketNameIsNotValidException/BucketNameIsNotValidException.log
+- targetFrame: 13
+- output: .
+- searchBudget: 60
+- botsingVersion: 1.0.7
+- mavenArtifacts: [
+	org.ow2.proactive:catalog:8.3.5]
+Running Botsing with target frame=13.
+
+14:44:45.190 [main] ERROR e.s.b.reproduction.CrashReproduction - Error in target initialization:
+java.lang.ClassNotFoundException: Target class not found in inheritance tree
+	at org.evosuite.setup.DependencyAnalysis.analyze(DependencyAnalysis.java:87)
+	at org.evosuite.setup.DependencyAnalysis.analyzeClass(DependencyAnalysis.java:132)
+	at eu.stamp.botsing.reproduction.CrashReproduction.initializeTargetClass(CrashReproduction.java:206)
+	at eu.stamp.botsing.reproduction.CrashReproduction.generateCrashReproductionTests(CrashReproduction.java:101)
+	at eu.stamp.botsing.reproduction.CrashReproduction.execute(CrashReproduction.java:72)
+	at eu.stamp.botsing.Botsing.parseCommandLine(Botsing.java:91)
+	at eu.stamp.botsing.Botsing.main(Botsing.java:213)
+:botsing (Thread[Task worker for ':',5,main]) completed. Took 3.131 secs.
+
+BUILD SUCCESSFUL in 3s
+1 actionable task: 1 executed

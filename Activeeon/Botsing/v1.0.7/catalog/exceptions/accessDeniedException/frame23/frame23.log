@@ -1,0 +1,186 @@
+Initialized native services in: /home/mael/.gradle/native
+The client will now receive all logging from the daemon (pid: 24663). The daemon log file: /home/mael/.gradle/daemon/4.10.2/daemon-24663.out.log
+Starting 7th build in daemon [uptime: 24 mins 26.229 secs, performance: 98%]
+Using 8 worker leases.
+Starting Build
+Settings evaluated using settings file '/media/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.7/catalog/settings.gradle'.
+Projects loaded. Root project using build file '/media/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.7/catalog/build.gradle'.
+Included projects: [root project 'catalog']
+
+> Configure project :
+Evaluating root project 'catalog' using build file '/media/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.7/catalog/build.gradle'.
+Compiling build file '/media/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.7/catalog/build.gradle' using SubsetScriptTransformer.
+Compiling build file '/media/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.7/catalog/build.gradle' using BuildScriptTransformer.
+All projects evaluated.
+Selected primary task 'botsing' from project :
+Tasks to be executed: [task ':botsing']
+:botsing (Thread[Task worker for ':',5,main]) started.
+16:49:28.665 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: 2019-10-15 17
+16:49:28.668 [main] WARN  eu.stamp.botsing.StackTrace - Missing line in frame 3
+16:49:28.670 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter:107)
+16:49:28.671 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.springframework.web.filter.OncePerRequestFilter
+16:49:29.150 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 106.
+
+> Task :botsing
+Task ':botsing' is not up-to-date because:
+  Task has not declared any outputs despite executing actions.
+The following parameters will be used: 
+- logPath: /home/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.7/catalog/exceptions/accessDeniedException/AccessDeniedException.log
+- targetFrame: 23
+- output: .
+- searchBudget: 60
+- botsingVersion: 1.0.7
+- mavenArtifacts: [
+	org.ow2.proactive:catalog:8.3.5]
+Running Botsing with target frame=23.
+
+16:49:39.566 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+16:49:39.576 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+16:49:39.591 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 50 individuals
+16:49:40.418 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 5.926829268292683
+16:49:40.418 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.926829268292683. PT: 0 seconds
+16:49:40.418 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+16:49:42.184 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.926829268292683 | 100
+16:49:42.749 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 150
+16:49:42.749 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.333333333333334. PT: 3 seconds
+16:49:44.385 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 200
+16:49:44.794 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 250
+16:49:45.241 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 300
+16:49:45.715 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 350
+16:49:46.191 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 400
+16:49:46.507 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 450
+16:49:46.725 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 500
+16:49:47.020 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 550
+16:49:47.282 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 600
+16:49:47.613 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 650
+16:49:48.140 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 700
+16:49:48.442 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 750
+16:49:48.772 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 800
+16:49:49.005 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 850
+16:49:49.237 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 900
+16:49:49.486 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 950
+16:49:49.720 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 1000
+16:49:49.975 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 1050
+16:49:50.218 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 1100
+16:49:50.413 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 1150
+16:49:50.670 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 1200
+16:49:50.954 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 1250
+16:49:51.165 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 1300
+16:49:51.410 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 1350
+16:49:51.667 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 1400
+16:49:51.961 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 1450
+16:49:53.148 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 1500
+16:49:53.486 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 1550
+16:49:53.791 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 1600
+16:49:54.105 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 1650
+16:49:54.480 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 1700
+16:49:54.931 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 1750
+16:49:55.406 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 1800
+16:49:55.762 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 1850
+16:49:56.095 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 1900
+16:49:56.493 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 1950
+16:49:56.861 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 2000
+16:49:57.305 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 2050
+16:49:57.861 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 2100
+16:49:58.240 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 2150
+16:49:58.606 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 2200
+16:49:59.126 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 2250
+16:49:59.514 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 2300
+16:49:59.930 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 2350
+16:50:00.493 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 2400
+16:50:00.899 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 2450
+16:50:01.369 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 2500
+16:50:01.995 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 2550
+16:50:02.482 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 2600
+16:50:03.026 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 2650
+16:50:03.685 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 2700
+16:50:04.127 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 2750
+16:50:04.658 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 2800
+16:50:05.024 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 2850
+16:50:05.402 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 2900
+16:50:05.873 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 2950
+16:50:06.202 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 3000
+16:50:06.522 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 3050
+16:50:07.016 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 3100
+16:50:07.359 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 3150
+16:50:07.687 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 3200
+16:50:08.184 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 3250
+16:50:08.512 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 3300
+16:50:08.867 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 3350
+16:50:09.317 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 3400
+16:50:09.646 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 3450
+16:50:12.226 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 3500
+16:50:12.504 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 3550
+16:50:12.806 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 3600
+16:50:13.143 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 3650
+16:50:13.765 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 3700
+16:50:14.104 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 3750
+16:50:14.647 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 3800
+16:50:15.000 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 3850
+16:50:15.365 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 3900
+16:50:15.868 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 3950
+16:50:16.191 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 4000
+16:50:16.519 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 4050
+16:50:16.967 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 4100
+16:50:17.330 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 4150
+16:50:17.932 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 4200
+16:50:18.512 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 4250
+16:50:18.871 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 4300
+16:50:19.283 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 4350
+16:50:19.866 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 4400
+16:50:20.296 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 4450
+16:50:20.941 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 4500
+16:50:21.550 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 4550
+16:50:24.277 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 4600
+16:50:24.724 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 4650
+16:50:25.250 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 4700
+16:50:25.647 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 4750
+16:50:26.128 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 4800
+16:50:26.692 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 4850
+16:50:27.104 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 4900
+16:50:27.635 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 4950
+16:50:28.039 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 5000
+16:50:28.445 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 5050
+16:50:28.959 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 5100
+16:50:29.334 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 5150
+16:50:29.853 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 5200
+16:50:30.224 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 5250
+16:50:30.654 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 5300
+16:50:31.180 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 5350
+16:50:31.581 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 5400
+16:50:31.892 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 5450
+16:50:32.235 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 5500
+16:50:32.824 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 5550
+16:50:33.234 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 5600
+16:50:33.662 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 5650
+16:50:34.373 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 5700
+16:50:34.821 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 5750
+16:50:35.193 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 5800
+16:50:35.772 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 5850
+16:50:36.158 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 5900
+16:50:36.545 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 5950
+16:50:36.961 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 6000
+16:50:37.515 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 6050
+16:50:37.877 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 6100
+16:50:38.219 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 6150
+16:50:38.748 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 6200
+16:50:39.127 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 6250
+16:50:39.671 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 6300
+16:50:40.069 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 6350
+16:50:40.443 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 6400
+16:50:40.589 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - MaxTime :                         61 / 60           Finished!
+16:50:40.651 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 5.333333333333334 | 6450
+16:50:40.652 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - MaxTime :                         61 / 60           Finished!
+16:50:40.652 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+16:50:40.652 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 5.333333333333334. PT: 3 seconds
+16:50:40.652 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is not covered! The best solution has 5.333333333333334 fitness value.
+16:50:40.652 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The best test is:(non-minimized version:
+)
+16:50:40.655 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+16:50:40.657 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+16:50:40.663 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'OncePerRequestFilter_ESTest' to .
+16:50:40.680 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
+:botsing (Thread[Task worker for ':',5,main]) completed. Took 1 mins 12.503 secs.
+
+BUILD SUCCESSFUL in 1m 13s
+1 actionable task: 1 executed

@@ -1,0 +1,205 @@
+Initialized native services in: /home/mael/.gradle/native
+Removing 0 daemon stop events from registry
+Starting a Gradle Daemon (subsequent builds will be faster)
+Starting process 'Gradle build daemon'. Working directory: /home/mael/.gradle/daemon/4.10.2 Command: /usr/lib/jvm/java-8-openjdk-amd64/bin/java -XX:+HeapDumpOnOutOfMemoryError -Xmx1024m -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -cp /home/mael/.gradle/wrapper/dists/gradle-4.10.2-bin/cghg6c4gf4vkiutgsab8yrnwv/gradle-4.10.2/lib/gradle-launcher-4.10.2.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 4.10.2
+Successfully started process 'Gradle build daemon'
+An attempt to start the daemon took 0.665 secs.
+The client will now receive all logging from the daemon (pid: 19366). The daemon log file: /home/mael/.gradle/daemon/4.10.2/daemon-19366.out.log
+Starting build in new daemon [memory: 954.7 MB]
+Using 8 worker leases.
+Starting Build
+Settings evaluated using settings file '/media/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.7/catalog/settings.gradle'.
+Projects loaded. Root project using build file '/media/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.7/catalog/build.gradle'.
+Included projects: [root project 'catalog']
+
+> Configure project :
+Evaluating root project 'catalog' using build file '/media/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.7/catalog/build.gradle'.
+All projects evaluated.
+Selected primary task 'botsing' from project :
+Tasks to be executed: [task ':botsing']
+:botsing (Thread[Task worker for ':' Thread 6,5,main]) started.
+14:28:51.803 [main] INFO  eu.stamp.botsing.StackTrace - Exception type is detected: 2019-10-15 17
+14:28:51.806 [main] WARN  eu.stamp.botsing.StackTrace - Missing line in frame 2
+14:28:51.807 [main] WARN  eu.stamp.botsing.StackTrace - Missing line in frame 11
+14:28:51.807 [main] WARN  eu.stamp.botsing.StackTrace - Missing line in frame 13
+14:28:51.809 [main] INFO  eu.stamp.botsing.StackTrace - Target frame is set to: org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool:635)
+14:28:51.809 [main] INFO  eu.stamp.botsing.StackTrace - Target Class is set to: org.eclipse.jetty.util.thread.QueuedThreadPool
+14:28:52.597 [main] INFO  e.s.b.reproduction.CrashReproduction - Starting the dependency analysis. The number of detected jar files is 106.
+
+> Task :botsing
+Task ':botsing' is not up-to-date because:
+  Task has not declared any outputs despite executing actions.
+The following parameters will be used: 
+- logPath: /home/mael/stamp/wp3/evocrash-usecases-output/Activeeon/Botsing/v1.0.7/catalog/logs/BucketNameIsNotValidException.log
+- targetFrame: 53
+- output: .
+- searchBudget: 60
+- botsingVersion: 1.0.7
+- mavenArtifacts: [
+	org.ow2.proactive:catalog:8.3.5]
+Running Botsing with target frame=53.
+
+2019-10-16 14:28:55.247:INFO::main: Logging initialized @3720ms
+14:28:55.822 [main] INFO  e.s.b.reproduction.CrashReproduction - Analysing dependencies done!
+14:28:55.830 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - test generation strategy: Botsing individual
+14:28:55.842 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Initializing the first population with size of 50 individuals
+14:28:57.287 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the initial population is: 3.0
+14:28:57.288 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. PT: 1 seconds
+14:28:57.288 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Starting evolution
+14:28:57.971 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 100
+14:28:58.382 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 150
+14:29:03.771 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 200
+14:29:09.129 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 250
+14:29:14.556 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 300
+14:29:14.955 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 350
+14:29:15.279 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 400
+14:29:15.610 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 450
+14:29:15.910 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 500
+14:29:16.162 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 550
+14:29:16.392 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 600
+14:29:16.594 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 650
+14:29:16.861 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 700
+14:29:17.099 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 750
+14:29:17.304 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 800
+14:29:17.507 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 850
+14:29:17.735 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 900
+14:29:17.985 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 950
+14:29:21.038 [qtp78165451-1308] WARN  o.e.j.util.thread.QueuedThreadPool - 
+org.evosuite.testcase.execution.TestCaseExecutor$TimeoutExceeded: null
+	at org.evosuite.testcase.execution.ExecutionTracer.checkTimeout(ExecutionTracer.java:387) ~[botsing-reproduction-1.0.7.jar:1.0.7]
+	at org.eclipse.jetty.util.BlockingArrayQueue.poll(BlockingArrayQueue.java:408) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.idleJobPoll(QueuedThreadPool.java:531) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.access$700(QueuedThreadPool.java:47) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:590) ~[na:9.2.16.v20160414]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_222]
+14:29:24.039 [qtp78165451-1324] WARN  o.e.j.util.thread.QueuedThreadPool - 
+org.evosuite.testcase.execution.TestCaseExecutor$TimeoutExceeded: null
+	at org.evosuite.testcase.execution.ExecutionTracer.checkTimeout(ExecutionTracer.java:387) ~[botsing-reproduction-1.0.7.jar:1.0.7]
+	at org.eclipse.jetty.util.BlockingArrayQueue.poll(BlockingArrayQueue.java:408) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.idleJobPoll(QueuedThreadPool.java:531) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.access$700(QueuedThreadPool.java:47) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:590) ~[na:9.2.16.v20160414]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_222]
+14:29:24.040 [qtp78165451-1324] WARN  o.e.j.util.thread.QueuedThreadPool - Unexpected thread death: org.eclipse.jetty.util.thread.QueuedThreadPool$3@49c8adae in qtp78165451{STARTED,8<=8<=200,i=7,q=0}
+14:29:24.236 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1000
+14:29:24.488 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1050
+14:29:24.725 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1100
+14:29:24.981 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1150
+14:29:25.284 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1200
+14:29:28.300 [qtp690728610-1864] WARN  o.e.j.util.thread.QueuedThreadPool - 
+org.evosuite.testcase.execution.TestCaseExecutor$TimeoutExceeded: null
+	at org.evosuite.testcase.execution.ExecutionTracer.checkTimeout(ExecutionTracer.java:387) ~[botsing-reproduction-1.0.7.jar:1.0.7]
+	at org.eclipse.jetty.util.BlockingArrayQueue.poll(BlockingArrayQueue.java:408) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.idleJobPoll(QueuedThreadPool.java:531) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.access$700(QueuedThreadPool.java:47) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:590) ~[na:9.2.16.v20160414]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_222]
+14:29:28.301 [qtp690728610-1864] WARN  o.e.j.util.thread.QueuedThreadPool - Unexpected thread death: org.eclipse.jetty.util.thread.QueuedThreadPool$3@647efef3 in qtp690728610{STARTED,-4951<=8<=200,i=3,q=0}
+14:29:31.305 [qtp690728610-1874] WARN  o.e.j.util.thread.QueuedThreadPool - 
+org.evosuite.testcase.execution.TestCaseExecutor$TimeoutExceeded: null
+	at org.evosuite.testcase.execution.ExecutionTracer.checkTimeout(ExecutionTracer.java:387) ~[botsing-reproduction-1.0.7.jar:1.0.7]
+	at org.eclipse.jetty.util.BlockingArrayQueue.poll(BlockingArrayQueue.java:408) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.idleJobPoll(QueuedThreadPool.java:531) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.access$700(QueuedThreadPool.java:47) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:590) ~[na:9.2.16.v20160414]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_222]
+14:29:31.306 [qtp690728610-1874] WARN  o.e.j.util.thread.QueuedThreadPool - Unexpected thread death: org.eclipse.jetty.util.thread.QueuedThreadPool$3@647efef3 in qtp690728610{STARTED,-4951<=8<=200,i=5,q=0}
+14:29:34.310 [qtp690728610-1884] WARN  o.e.j.util.thread.QueuedThreadPool - 
+org.evosuite.testcase.execution.TestCaseExecutor$TimeoutExceeded: null
+	at org.evosuite.testcase.execution.ExecutionTracer.checkTimeout(ExecutionTracer.java:387) ~[botsing-reproduction-1.0.7.jar:1.0.7]
+	at org.eclipse.jetty.util.BlockingArrayQueue.poll(BlockingArrayQueue.java:408) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.idleJobPoll(QueuedThreadPool.java:531) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.access$700(QueuedThreadPool.java:47) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:590) ~[na:9.2.16.v20160414]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_222]
+14:29:34.311 [qtp690728610-1884] WARN  o.e.j.util.thread.QueuedThreadPool - Unexpected thread death: org.eclipse.jetty.util.thread.QueuedThreadPool$3@647efef3 in qtp690728610{STARTED,-4951<=8<=200,i=7,q=0}
+14:29:37.312 [qtp690728610-1889] WARN  o.e.j.util.thread.QueuedThreadPool - 
+org.evosuite.testcase.execution.TestCaseExecutor$TimeoutExceeded: null
+	at org.evosuite.testcase.execution.ExecutionTracer.checkTimeout(ExecutionTracer.java:387) ~[botsing-reproduction-1.0.7.jar:1.0.7]
+	at org.eclipse.jetty.util.BlockingArrayQueue.poll(BlockingArrayQueue.java:408) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.idleJobPoll(QueuedThreadPool.java:531) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.access$700(QueuedThreadPool.java:47) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:590) ~[na:9.2.16.v20160414]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_222]
+14:29:37.312 [qtp690728610-1889] WARN  o.e.j.util.thread.QueuedThreadPool - Unexpected thread death: org.eclipse.jetty.util.thread.QueuedThreadPool$3@647efef3 in qtp690728610{STARTED,-4951<=8<=200,i=7,q=0}
+14:29:37.653 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1250
+14:29:40.799 [qtp1518008480-2046] WARN  o.e.j.util.thread.QueuedThreadPool - 
+org.evosuite.testcase.execution.TestCaseExecutor$TimeoutExceeded: null
+	at org.evosuite.testcase.execution.ExecutionTracer.checkTimeout(ExecutionTracer.java:387) ~[botsing-reproduction-1.0.7.jar:1.0.7]
+	at org.eclipse.jetty.util.BlockingArrayQueue.poll(BlockingArrayQueue.java:408) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.idleJobPoll(QueuedThreadPool.java:531) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.access$700(QueuedThreadPool.java:47) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:590) ~[na:9.2.16.v20160414]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_222]
+14:29:40.801 [qtp1518008480-2046] WARN  o.e.j.util.thread.QueuedThreadPool - Unexpected thread death: org.eclipse.jetty.util.thread.QueuedThreadPool$3@47b1ad51 in qtp1518008480{STARTED,8<=8<=200,i=12,q=0}
+14:29:40.985 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1300
+14:29:41.359 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1350
+14:29:41.728 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1400
+14:29:44.883 [qtp1570460145-2488] WARN  o.e.j.util.thread.QueuedThreadPool - 
+org.evosuite.testcase.execution.TestCaseExecutor$TimeoutExceeded: null
+	at org.evosuite.testcase.execution.ExecutionTracer.checkTimeout(ExecutionTracer.java:387) ~[botsing-reproduction-1.0.7.jar:1.0.7]
+	at org.eclipse.jetty.util.BlockingArrayQueue.poll(BlockingArrayQueue.java:408) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.idleJobPoll(QueuedThreadPool.java:531) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.access$700(QueuedThreadPool.java:47) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:590) ~[na:9.2.16.v20160414]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_222]
+14:29:44.885 [qtp1570460145-2488] WARN  o.e.j.util.thread.QueuedThreadPool - Unexpected thread death: org.eclipse.jetty.util.thread.QueuedThreadPool$3@467a48ac in qtp1570460145{STARTED,8<=8<=200,i=4,q=0}
+14:29:47.886 [qtp1570460145-2500] WARN  o.e.j.util.thread.QueuedThreadPool - 
+org.evosuite.testcase.execution.TestCaseExecutor$TimeoutExceeded: null
+	at org.evosuite.testcase.execution.ExecutionTracer.checkTimeout(ExecutionTracer.java:387) ~[botsing-reproduction-1.0.7.jar:1.0.7]
+	at org.eclipse.jetty.util.BlockingArrayQueue.poll(BlockingArrayQueue.java:408) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.idleJobPoll(QueuedThreadPool.java:531) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.access$700(QueuedThreadPool.java:47) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:590) ~[na:9.2.16.v20160414]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_222]
+14:29:47.888 [qtp1570460145-2500] WARN  o.e.j.util.thread.QueuedThreadPool - Unexpected thread death: org.eclipse.jetty.util.thread.QueuedThreadPool$3@467a48ac in qtp1570460145{STARTED,8<=8<=200,i=4,q=0}
+14:29:53.074 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1450
+14:29:53.454 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1500
+14:29:53.837 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1550
+14:29:54.208 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1600
+14:29:54.551 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1650
+14:29:54.958 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1700
+14:29:55.378 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1750
+14:29:55.815 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1800
+14:29:59.009 [qtp1038093523-85] WARN  o.e.j.util.thread.QueuedThreadPool - 
+org.evosuite.testcase.execution.TestCaseExecutor$TimeoutExceeded: null
+	at org.evosuite.testcase.execution.ExecutionTracer.checkTimeout(ExecutionTracer.java:387) ~[botsing-reproduction-1.0.7.jar:1.0.7]
+	at org.eclipse.jetty.util.BlockingArrayQueue.poll(BlockingArrayQueue.java:408) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.idleJobPoll(QueuedThreadPool.java:531) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.access$700(QueuedThreadPool.java:47) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:590) ~[na:9.2.16.v20160414]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_222]
+14:30:02.011 [qtp1038093523-4358] WARN  o.e.j.util.thread.QueuedThreadPool - 
+org.evosuite.testcase.execution.TestCaseExecutor$TimeoutExceeded: null
+	at org.evosuite.testcase.execution.ExecutionTracer.checkTimeout(ExecutionTracer.java:387) ~[botsing-reproduction-1.0.7.jar:1.0.7]
+	at org.eclipse.jetty.util.BlockingArrayQueue.poll(BlockingArrayQueue.java:408) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.idleJobPoll(QueuedThreadPool.java:531) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.access$700(QueuedThreadPool.java:47) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:590) ~[na:9.2.16.v20160414]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_222]
+14:30:02.011 [qtp308639820-4345] WARN  o.e.j.util.thread.QueuedThreadPool - 
+org.evosuite.testcase.execution.TestCaseExecutor$TimeoutExceeded: null
+	at org.evosuite.testcase.execution.ExecutionTracer.checkTimeout(ExecutionTracer.java:387) ~[botsing-reproduction-1.0.7.jar:1.0.7]
+	at org.eclipse.jetty.util.BlockingArrayQueue.poll(BlockingArrayQueue.java:408) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.idleJobPoll(QueuedThreadPool.java:531) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.access$700(QueuedThreadPool.java:47) ~[na:9.2.16.v20160414]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:590) ~[na:9.2.16.v20160414]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_222]
+14:30:02.012 [qtp1038093523-4358] WARN  o.e.j.util.thread.QueuedThreadPool - Unexpected thread death: org.eclipse.jetty.util.thread.QueuedThreadPool$3@7fd69472 in qtp1038093523{STARTED,8<=8<=102,i=7,q=0}
+14:30:02.012 [qtp308639820-4345] WARN  o.e.j.util.thread.QueuedThreadPool - Unexpected thread death: org.eclipse.jetty.util.thread.QueuedThreadPool$3@1bd48480 in qtp308639820{STARTED,8<=8<=200,i=5,q=0}
+14:30:02.015 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - MaxTime :                         66 / 60           Finished!
+14:30:02.139 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the current population: 3.0 | 1850
+14:30:02.140 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - MaxTime :                         66 / 60           Finished!
+14:30:02.140 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - The search process is finished.
+14:30:02.140 [main] INFO  e.s.b.g.s.GuidedGeneticAlgorithm - Best fitness in the final population is: 3.0. PT: 1 seconds
+14:30:02.140 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - * The target crash is not covered! The best solution has 3.0 fitness value.
+14:30:02.140 [main] INFO  e.s.b.t.s.BotsingIndividualStrategy - The best test is:(non-minimized version:
+)
+14:30:02.143 [main] INFO  e.s.b.reproduction.CrashReproduction - * Minimizing test suite
+14:30:02.145 [main] INFO  e.s.b.reproduction.CrashReproduction - * Compiling and checking tests
+14:30:02.150 [main] INFO  e.s.b.reproduction.CrashReproduction - * Writing JUnit test case 'QueuedThreadPool_ESTest' to .
+14:30:02.300 [main] INFO  e.s.b.reproduction.CrashReproduction - The solution test is saved!
+:botsing (Thread[Task worker for ':' Thread 6,5,main]) completed. Took 1 mins 11.062 secs.
+
+BUILD SUCCESSFUL in 1m 13s
+1 actionable task: 1 executed
