@@ -1,0 +1,8 @@
+org.ow2.proactive.scripting.ScriptException: urllib2.HTTPError: HTTP Error 413: Request Entity Too Large in PostScript at line number 78
+    at org.python.jsr223.PyScriptEngine.scriptException(PyScriptEngine.java:202)
+    at org.python.jsr223.PyScriptEngine.eval(PyScriptEngine.java:42)
+    at org.python.jsr223.PyScriptEngine.eval(PyScriptEngine.java:47)
+    at javax.script.AbstractScriptEngine.eval(AbstractScriptEngine.java:249)
+    at org.ow2.proactive.scripting.Script.execute(Script.java:312)
+    at org.ow2.proactive.scripting.ScriptHandler.handle(ScriptHandler.java:65)
+    at org.ow2.proactive.scheduler.task.executors.InProcessTaskExecutor.execute(InProcessTaskExecutor.java:232) 

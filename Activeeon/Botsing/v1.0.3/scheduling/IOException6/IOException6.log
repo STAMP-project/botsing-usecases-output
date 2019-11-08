@@ -1,0 +1,7 @@
+org.objectweb.proactive.core.exceptions.IOException6: Failed to send PNP message to pnp://10.0.137.112:1025/PA-AGENT_NODE_1
+        at org.objectweb.proactive.extensions.pnp.PNPROMessage.send(PNPROMessage.java:106)
+        at org.objectweb.proactive.extensions.pnp.PNPRemoteObject.receiveMessage(PNPRemoteObject.java:71)	
+        at org.objectweb.proactive.core.remoteobject.RemoteObjectSet.receiveMessage(RemoteObjectSet.java:194)
+        at org.objectweb.proactive.core.remoteobject.RemoteObjectAdapter.receiveMessage(RemoteObjectAdapter.java:140)
+        at org.objectweb.proactive.core.remoteobject.SynchronousProxy.reify(SynchronousProxy.java:70)
+	

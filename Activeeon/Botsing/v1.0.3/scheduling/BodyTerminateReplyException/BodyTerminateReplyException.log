@@ -1,0 +1,10 @@
+org.objectweb.proactive.core.body.exceptions.BodyTerminatedReplyException: org.ow2.proactive.resourcemanager.nodesource.NodeSource : The body has been Terminated  while receiving reply to request nodeSourceUnregister
+    at org.objectweb.proactive.core.body.AbstractBody.receiveReply(AbstractBody.java:233)
+    at org.objectweb.proactive.core.body.reply.ReplyImpl.send(ReplyImpl.java:93)
+    at org.objectweb.proactive.core.body.BodyImpl$ActiveLocalBodyStrategy.serveInternal(BodyImpl.java:638)
+    at org.objectweb.proactive.core.body.BodyImpl$ActiveLocalBodyStrategy.serve(BodyImpl.java:486)
+    at org.objectweb.proactive.core.body.AbstractBody.serve(AbstractBody.java:417)
+    at org.objectweb.proactive.Service.serve(Service.java:119)
+    at org.ow2.proactive.resourcemanager.core.RMCore.runActivity(RMCore.java:511)
+    at org.objectweb.proactive.core.body.ActiveBody.run(ActiveBody.java:167)
+    at java.lang.Thread.run(Thread.java:748)
